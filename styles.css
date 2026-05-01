@@ -880,7 +880,7 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
   display: none;
   position: fixed;
   bottom: 24px;
-  right: 20px;
+  left: 20px;
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -891,6 +891,19 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
   box-shadow: 0 4px 20px rgba(107, 125, 103, 0.4);
   z-index: 999;
   transition: var(--transition);
+  animation: pulse-fab 2s infinite;
+}
+
+@keyframes pulse-fab {
+  0% {
+    box-shadow: 0 0 0 0 rgba(107, 125, 103, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(107, 125, 103, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(107, 125, 103, 0);
+  }
 }
 .mobile-fab svg {
   width: 24px;
