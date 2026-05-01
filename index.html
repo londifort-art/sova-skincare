@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+  <title>SOVA SKINCARE — Premium Cosmetology & Body Modeling in Riga</title>
+  <meta name="description" content="Expert cosmetology, injectables, and body modeling treatments by certified medical professionals in Riga, Latvia. Book your appointment at SOVA SKINCARE.">
+  <meta property="og:title" content="SOVA SKINCARE — Elevate Your Natural Beauty">
+  <meta property="og:description" content="Advanced aesthetic treatments by medical professionals in the heart of Riga.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>🦉</text></svg>">
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#" class="nav-logo">SOVA</a>
+    <!-- Backdrop for mobile menu -->
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <div class="nav-links" id="navLinks">
+      <div class="drawer-header">
+        <div class="lang-switcher mobile-lang">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn" data-lang="lv">LV</button>
+        </div>
+        <button class="drawer-close-btn" id="drawerClose" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#testimonials" data-i18n="nav.reviews">Reviews</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <a href="https://dikidi.net/1447376" target="_blank" rel="noopener" class="nav-book" data-i18n="nav.book">Book Now</a>
+    </div>
+
+    <div class="nav-right">
+      <!-- Desktop lang switcher -->
+      <div class="lang-switcher desktop-lang">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="lv">LV</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <img src="images/hero-bg.png" alt="SOVA SKINCARE clinic interior" loading="eager">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span data-i18n="hero.badge">Riga, Latvia</span>
+      </div>
+      <h1 data-i18n="hero.title">Elevate Your <em>Natural</em> Beauty</h1>
+      <p class="hero-subtitle" data-i18n="hero.subtitle">Expert cosmetology & body modeling in the heart of Riga. Advanced aesthetic treatments by certified medical professionals.</p>
+      <div class="hero-actions">
+        <a href="https://dikidi.net/1447376" target="_blank" rel="noopener" class="btn btn-primary" id="hero-cta">
+          <span data-i18n="hero.cta">Book an Appointment</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="#services" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: #fff;">
+          <span data-i18n="hero.cta2">Explore Services</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span data-i18n="hero.scroll">Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <span class="section-label" data-i18n="services.label">What We Offer</span>
+      <h2 class="section-title" data-i18n="services.title">Our Treatments</h2>
+      <p class="section-subtitle" data-i18n="services.subtitle">A curated selection of advanced aesthetic procedures, each tailored to your unique skin needs and body goals.</p>
+    </div>
+    <div class="services-grid">
+      <!-- Card 1: Facial -->
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-card-img">
+          <img src="images/facial.png" alt="Facial treatments" loading="lazy">
+        </div>
+        <div class="service-card-overlay"></div>
+        <div class="service-card-content">
+          <span class="service-card-number">01</span>
+          <h3 data-i18n="services.facial">Facial Treatments</h3>
+          <ul class="service-card-list">
+            <li data-i18n="services.facial.1">Chemical Peels</li>
+            <li data-i18n="services.facial.2">Deep Cleansing</li>
+            <li data-i18n="services.facial.3">Machine Cosmetology</li>
+            <li data-i18n="services.facial.4">Skin Rejuvenation</li>
+          </ul>
+        </div>
+        <div class="service-card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 17 10-10"/><path d="M7 7h10v10"/></svg>
+        </div>
+      </div>
+      <!-- Card 2: Injectables -->
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-card-img">
+          <img src="images/injectables.png" alt="Injectable treatments" loading="lazy">
+        </div>
+        <div class="service-card-overlay"></div>
+        <div class="service-card-content">
+          <span class="service-card-number">02</span>
+          <h3 data-i18n="services.inject">Injectables</h3>
+          <ul class="service-card-list">
+            <li data-i18n="services.inject.1">Bio-revitalization</li>
+            <li data-i18n="services.inject.2">Mesotherapy</li>
+            <li data-i18n="services.inject.3">PDRN Therapy</li>
+            <li data-i18n="services.inject.4">Skin Boosters</li>
+          </ul>
+        </div>
+        <div class="service-card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 17 10-10"/><path d="M7 7h10v10"/></svg>
+        </div>
+      </div>
+      <!-- Card 3: Body -->
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-card-img">
+          <img src="images/body.png" alt="Body modeling" loading="lazy">
+        </div>
+        <div class="service-card-overlay"></div>
+        <div class="service-card-content">
+          <span class="service-card-number">03</span>
+          <h3 data-i18n="services.body">Body Modeling</h3>
+          <ul class="service-card-list">
+            <li data-i18n="services.body.1">Lipozero Technology</li>
+            <li data-i18n="services.body.2">Vacuum Boots (Vakuumzābaki)</li>
+            <li data-i18n="services.body.3">Body Contouring</li>
+            <li data-i18n="services.body.4">Lymphatic Drainage</li>
+          </ul>
+        </div>
+        <div class="service-card-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 17 10-10"/><path d="M7 7h10v10"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <div class="about-image-wrapper">
+          <img src="images/founder.png" alt="SOVA SKINCARE founder" loading="lazy">
+          <div class="about-stats">
+            <div class="about-stat">
+              <div class="about-stat-number" data-count="500" data-suffix="+">0</div>
+              <div class="about-stat-label" data-i18n="about.stat1.label">Happy Clients</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-number" data-count="7" data-suffix="+">0</div>
+              <div class="about-stat-label" data-i18n="about.stat2.label">Years Exp.</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-number" data-count="15" data-suffix="+">0</div>
+              <div class="about-stat-label" data-i18n="about.stat3.label">Treatments</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-image-accent"></div>
+      </div>
+      <div class="about-content">
+        <span class="section-label reveal" data-i18n="about.label">About Us</span>
+        <h2 class="section-title reveal" data-i18n="about.title">SOVA SKINCARE<br>by @sova_sizova</h2>
+        <p class="section-subtitle reveal" data-i18n="about.text">At SOVA SKINCARE, we believe in a personalized approach to skin health and body contouring. Every treatment is performed by certified medical professionals (ārstniecības personas) with years of experience in aesthetic medicine.</p>
+        <div class="about-features reveal">
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <h4 data-i18n="about.feat1.title">Certified Professionals</h4>
+              <p data-i18n="about.feat1.text">All treatments performed by licensed medical aestheticians with specialized training.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </div>
+            <div>
+              <h4 data-i18n="about.feat2.title">Individual Approach</h4>
+              <p data-i18n="about.feat2.text">Every protocol is customized for your unique skin type, goals, and lifestyle.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 2v2m8-2v2m-4-2v2M3 7h18M5 7v10a2 2 0 002 2h10a2 2 0 002-2V7"/></svg>
+            </div>
+            <div>
+              <h4 data-i18n="about.feat3.title">Premium Products</h4>
+              <p data-i18n="about.feat3.text">We use only the highest quality, clinically tested products and equipment.</p>
+            </div>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/sova_skincare/" target="_blank" rel="noopener" class="btn btn-primary reveal">
+          <span data-i18n="about.instagram">Follow on Instagram</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <span class="section-label reveal" data-i18n="testimonials.label">Testimonials</span>
+      <h2 class="section-title reveal" data-i18n="testimonials.title">What Our Clients Say</h2>
+      <p class="section-subtitle reveal" data-i18n="testimonials.subtitle">Real experiences from clients who trust us with their skin and confidence.</p>
+    </div>
+    <div class="testimonials-grid">
+      <!-- Review 1 -->
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-text" data-i18n="testimonial.1.text">"The bio-revitalization treatment completely transformed my skin. After just two sessions, my face has this incredible natural glow. The clinic atmosphere is so calming and professional."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <div class="testimonial-name" data-i18n="testimonial.1.name">Anna K.</div>
+            <div class="testimonial-role" data-i18n="testimonial.1.role">Bio-revitalization client</div>
+          </div>
+        </div>
+      </div>
+      <!-- Review 2 -->
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-text" data-i18n="testimonial.2.text">"I've tried body contouring at several places, but the Lipozero results here are on another level. I saw visible changes after just three sessions. Highly recommend!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">M</div>
+          <div>
+            <div class="testimonial-name" data-i18n="testimonial.2.name">Marina S.</div>
+            <div class="testimonial-role" data-i18n="testimonial.2.role">Body modeling client</div>
+          </div>
+        </div>
+      </div>
+      <!-- Review 3 -->
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-text" data-i18n="testimonial.3.text">"Finally found a cosmetologist who truly understands my skin. The personalized approach and warm atmosphere make every visit feel like a luxury experience."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">E</div>
+          <div>
+            <div class="testimonial-name" data-i18n="testimonial.3.name">Elena V.</div>
+            <div class="testimonial-role" data-i18n="testimonial.3.role">Facial treatment client</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA SECTION ===== -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-inner">
+      <span class="section-label reveal" data-i18n="cta.label">Ready?</span>
+      <h2 class="section-title reveal" data-i18n="cta.title">Ready to Glow?</h2>
+      <p class="section-subtitle reveal" data-i18n="cta.subtitle">Book your personalized consultation today and take the first step toward radiant, healthy skin.</p>
+      <a href="https://dikidi.net/1447376" target="_blank" rel="noopener" class="btn btn-primary reveal" id="cta-book">
+        <span data-i18n="cta.button">Book Your Appointment</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">SOVA</a>
+        <p data-i18n="footer.brand">Premium cosmetology & body modeling studio in the heart of Riga. Your journey to radiant skin starts here.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.nav">Navigate</h4>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#testimonials" data-i18n="nav.reviews">Reviews</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.services">Services</h4>
+        <a href="#services" data-i18n="services.facial">Facial Treatments</a>
+        <a href="#services" data-i18n="services.inject">Injectables</a>
+        <a href="#services" data-i18n="services.body">Body Modeling</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.contact">Contact</h4>
+        <a href="https://maps.google.com/?q=Tallinas+95+Riga+Latvia" target="_blank" rel="noopener">Tallinas 95, Rīga</a>
+        <a href="https://www.instagram.com/sova_skincare/" target="_blank" rel="noopener">@sova_skincare</a>
+        <a href="https://dikidi.net/1447376" target="_blank" rel="noopener" data-i18n="footer.book">Book Online</a>
+        <div class="footer-social" style="margin-top: 8px;">
+          <a href="https://www.instagram.com/sova_skincare/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copy">© 2025 SOVA SKINCARE. All rights reserved.</span>
+      <span data-i18n="footer.made">Designed with care in Riga</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating mobile CTA -->
+<a href="https://dikidi.net/1447376" target="_blank" rel="noopener" class="mobile-fab" id="mobileFab" aria-label="Book now">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+</a>
+
+<script src="translations.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
