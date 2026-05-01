@@ -967,7 +967,7 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
   .drawer-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-bottom: 32px;
   }
   .drawer-close-btn {
@@ -991,22 +991,6 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
     height: 24px;
     stroke: var(--charcoal);
     stroke-width: 2;
-  }
-
-  /* Language switcher inside drawer */
-  .mobile-lang {
-    display: flex;
-    background: rgba(0,0,0,0.04);
-    border-color: rgba(0,0,0,0.08);
-  }
-  .mobile-lang .lang-btn {
-    color: var(--charcoal-light);
-    padding: 8px 16px;
-    font-size: 0.8rem;
-  }
-  .mobile-lang .lang-btn.active {
-    background: var(--sage);
-    color: var(--white);
   }
 
   /* Nav links in drawer */
@@ -1056,7 +1040,6 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
   .navbar { padding: 16px 0; }
   .navbar.scrolled { padding: 12px 0; }
   .nav-logo { font-size: 1.4rem; }
-  .desktop-lang { display: none; }
 
   /* Hero mobile */
   .hero { min-height: 100svh; }
