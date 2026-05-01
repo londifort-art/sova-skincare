@@ -891,25 +891,41 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
   box-shadow: 0 4px 20px rgba(107, 125, 103, 0.4);
   z-index: 999;
   transition: var(--transition);
-  animation: pulse-fab 2s infinite;
 }
 
-@keyframes pulse-fab {
+.mobile-fab::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--sage-dark);
+  z-index: -1;
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
   0% {
-    box-shadow: 0 0 0 0 rgba(107, 125, 103, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(107, 125, 103, 0);
+    transform: scale(0.9);
+    opacity: 0.6;
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(107, 125, 103, 0);
+    transform: scale(1.8);
+    opacity: 0;
   }
 }
+
 .mobile-fab svg {
   width: 24px;
   height: 24px;
   stroke: var(--white);
+  animation: pulse-icon 2s ease-in-out infinite;
 }
+
+@keyframes pulse-icon {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
 .mobile-fab:active {
   transform: scale(0.92);
 }
