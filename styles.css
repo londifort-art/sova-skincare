@@ -443,6 +443,15 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
 .service-card:hover .service-card-img img {
   transform: scale(1.08);
 }
+.service-card.injectables .service-card-img img {
+  object-position: center 12%; /* Prevent cropping the model's head on mobile (wide aspect) */
+}
+.service-card.facial .service-card-img img {
+  object-position: center center;
+}
+.service-card.body .service-card-img img {
+  object-position: center center;
+}
 
 .service-card-overlay {
   position: absolute;
