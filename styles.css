@@ -653,21 +653,70 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
 /* ===== PRICE LIST ===== */
 .price-section {
   padding: 120px 0;
-  background: var(--charcoal);
-  color: var(--white);
+  background: var(--cream);
+  color: var(--charcoal);
   position: relative;
   overflow: hidden;
+}
+
+.price-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--sage), transparent);
 }
 
 .price-header {
   text-align: center;
   margin-bottom: 48px;
 }
-.price-header .section-label { color: var(--sage-light); }
-.price-header .section-title { color: var(--white); }
+.price-header .section-label { color: var(--sage); }
+.price-header .section-title { color: var(--charcoal); }
 .price-header .section-subtitle {
-  color: rgba(255,255,255,0.6);
-  margin: 0 auto;
+  color: var(--charcoal-light);
+  margin: 0 auto 28px;
+}
+
+/* Price Legend */
+.price-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 4px;
+  font-size: 0.82rem;
+  color: var(--charcoal-light);
+}
+.price-legend-karina {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, #c2a882, #a07850);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.price-legend-sep {
+  color: var(--sage);
+  font-size: 1.1rem;
+}
+.price-legend-regular {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(100,100,100,0.1);
+  border: 1px solid rgba(100,100,100,0.2);
+  color: var(--charcoal-light);
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 /* Price Filter Tabs */
@@ -680,78 +729,82 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
 }
 
 .price-tab {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(163, 143, 122, 0.25);
+  color: var(--charcoal-light);
   padding: 10px 20px;
   border-radius: 100px;
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
+  transition: all 0.28s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
 .price-tab:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--white);
-  border-color: rgba(255, 255, 255, 0.25);
+  background: #fff;
+  color: var(--charcoal);
+  border-color: var(--sage);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(163, 143, 122, 0.2);
 }
 
 .price-tab.active {
-  background: var(--sage);
+  background: var(--charcoal);
   color: var(--white);
-  border-color: var(--sage-light);
-  box-shadow: 0 4px 16px rgba(163, 143, 122, 0.3);
+  border-color: var(--charcoal);
+  box-shadow: 0 4px 16px rgba(44, 44, 44, 0.25);
 }
 
 /* Price Grid & Categories */
 .price-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  gap: 28px;
 }
 
 .price-category {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid rgba(163, 143, 122, 0.18);
   border-radius: var(--radius-lg);
   padding: 36px 32px;
   transition: all 0.35s ease;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 2px 16px rgba(44, 44, 44, 0.06);
 }
 
 .price-category:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(194, 168, 143, 0.3);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  border-color: rgba(163, 143, 122, 0.45);
+  box-shadow: 0 8px 32px rgba(44, 44, 44, 0.12);
+  transform: translateY(-3px);
 }
 
 .price-category-title {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 500;
-  color: var(--white);
+  color: var(--charcoal);
   margin-bottom: 24px;
   padding-bottom: 14px;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(163, 143, 122, 0.25);
   display: flex;
   align-items: center;
   gap: 10px;
+  letter-spacing: 0.01em;
 }
 
 .price-cat-icon {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+  opacity: 0.8;
 }
 
 .price-items {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 15px;
   flex-grow: 1;
 }
 
@@ -761,116 +814,138 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
   justify-content: space-between;
   gap: 12px;
   position: relative;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   line-height: 1.5;
   transition: color 0.2s ease;
 }
 
 .price-item:hover .price-name {
-  color: var(--sage-light);
+  color: var(--sage-dark);
 }
 
 .price-name {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--charcoal);
   font-weight: 400;
   z-index: 1;
-  background: var(--charcoal);
+  background: #ffffff;
   padding-right: 6px;
+  flex-shrink: 0;
+  max-width: 55%;
 }
 
 .price-dots {
   flex-grow: 1;
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+  border-bottom: 1px dotted rgba(100, 100, 100, 0.25);
   height: 1px;
   margin: 0 4px;
+  min-width: 16px;
 }
 
 .price-val-group {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   z-index: 1;
-  background: var(--charcoal);
+  background: #ffffff;
   padding-left: 6px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.price-val {
-  font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--sage-light);
-  letter-spacing: 0.02em;
-}
-
-.price-old {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.4);
-  text-decoration: line-through;
-}
-
-.price-discount {
-  color: var(--gold);
-}
-
+/* Karina price = PREMIUM (higher), gold gradient badge */
 .price-karina {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: rgba(194, 168, 143, 0.15);
-  border: 1px solid rgba(194, 168, 143, 0.3);
-  color: var(--sage-light);
-  padding: 3px 8px;
-  border-radius: 4px;
-  font-size: 0.78rem;
-  font-weight: 500;
+  background: linear-gradient(135deg, #c9a876 0%, #a07850 100%);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(160, 120, 80, 0.3);
 }
 
+/* Karina-only (no regular price) */
 .price-karina-only {
   display: inline-flex;
   align-items: center;
-  background: rgba(194, 168, 143, 0.15);
-  border: 1px solid rgba(194, 168, 143, 0.3);
-  color: var(--sage-light);
-  padding: 3px 8px;
-  border-radius: 4px;
-  font-size: 0.78rem;
+  background: linear-gradient(135deg, #c9a876 0%, #a07850 100%);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(160, 120, 80, 0.3);
+}
+
+/* Regular price = muted, smaller */
+.price-val {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
   font-weight: 500;
+  color: var(--charcoal-light);
+  letter-spacing: 0.01em;
+}
+
+.price-old {
+  font-size: 0.82rem;
+  color: rgba(100, 100, 100, 0.5);
+  text-decoration: line-through;
+}
+
+.price-discount {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--charcoal);
 }
 
 .highlight-item {
-  background: rgba(194, 168, 143, 0.06);
+  background: rgba(163, 143, 122, 0.06);
   padding: 8px 12px;
   border-radius: var(--radius-sm);
   margin: 0 -12px;
+  border-left: 2px solid var(--sage);
+}
+.highlight-item .price-name {
+  background: transparent;
+}
+.highlight-item .price-val-group {
+  background: transparent;
 }
 
 /* Price Promo Card */
 .price-promo-card {
   margin-top: 24px;
   padding: 16px 20px;
-  background: linear-gradient(135deg, rgba(163, 143, 122, 0.2) 0%, rgba(141, 118, 97, 0.08) 100%);
-  border: 1px solid rgba(194, 168, 143, 0.4);
+  background: linear-gradient(135deg, rgba(163, 143, 122, 0.1) 0%, rgba(141, 118, 97, 0.04) 100%);
+  border: 1px solid rgba(163, 143, 122, 0.3);
   border-radius: var(--radius-md);
   position: relative;
 }
 
 .price-promo-badge {
   display: inline-block;
-  background: var(--sage);
+  background: var(--charcoal);
   color: var(--white);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  padding: 3px 8px;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
   border-radius: 3px;
   margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .price-promo-card p {
   font-size: 0.85rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  color: var(--charcoal-light);
 }
 
 @media (max-width: 992px) {
@@ -887,22 +962,27 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
     padding: 24px 18px;
   }
   .price-category-title {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
   .price-item {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
   }
-  .price-val {
-    font-size: 0.95rem;
+  .price-name {
+    max-width: 50%;
   }
   .price-tabs {
     gap: 6px;
   }
   .price-tab {
     padding: 8px 14px;
-    font-size: 0.76rem;
+    font-size: 0.74rem;
+  }
+  .price-legend {
+    flex-wrap: wrap;
+    gap: 8px;
   }
 }
+
 
 /* ===== TESTIMONIALS ===== */
 .testimonials {
