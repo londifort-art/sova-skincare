@@ -139,3 +139,28 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 counters.forEach(c => counterObserver.observe(c));
+
+// ===== PRICE TAB FILTER =====
+document.addEventListener('DOMContentLoaded', () => {
+  const priceTabs = document.querySelectorAll('.price-tab');
+  const priceCategories = document.querySelectorAll('.price-category');
+
+  priceTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetCat = tab.dataset.tab;
+
+      priceTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      priceCategories.forEach(cat => {
+        if (targetCat === 'all' || cat.dataset.category === targetCat) {
+          cat.style.display = '';
+          cat.style.animation = 'fadeInUp 0.4s ease forwards';
+        } else {
+          cat.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+
