@@ -152,6 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
       priceTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
 
+      // Smoothly center the clicked tab in horizontal scrollable container on mobile
+      tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
       priceCategories.forEach(cat => {
         if (targetCat === 'all' || cat.dataset.category === targetCat) {
           cat.style.display = '';
