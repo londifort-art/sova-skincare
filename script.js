@@ -140,132 +140,72 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 counters.forEach(c => counterObserver.observe(c));
 
-// ===== PRICE CAROUSEL =====
+// ===== PRICE ACCORDION & TABS =====
 document.addEventListener('DOMContentLoaded', () => {
-  const track = document.getElementById('priceCarouselTrack');
-  const allSlides = Array.from(document.querySelectorAll('.price-slide'));
-  const prevBtn = document.getElementById('priceCarouselPrev');
-  const nextBtn = document.getElementById('priceCarouselNext');
-  const dotsNav = document.getElementById('priceDotsNav');
-  const priceTabs = Array.from(document.querySelectorAll('.price-tab'));
+  const priceTabs = document.querySelectorAll('.price-tab');
+  const accordionCards = document.querySelectorAll('.price-accordion-card');
 
-  if (!track || allSlides.length === 0) return;
-
-  // All tabs are single-category — each tab shows exactly 1 slide
-  let currentTabIndex = 0; // index into priceTabs
-
-  // Build the dot indicators (one per tab)
-  function buildDots() {
-    dotsNav.innerHTML = '';
-    priceTabs.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = 'price-dot' + (i === currentTabIndex ? ' active' : '');
-      dot.setAttribute('aria-label', `Slide ${i + 1}`);
-      dot.addEventListener('click', () => goToTab(i));
-      dotsNav.appendChild(dot);
+  // Toggle card expand/collapse
+  accordionCards.forEach(card => {
+    const header = card.querySelector('.price-card-header');
+    if (!header) return;
+    header.addEventListener('click', () => {
+      const isOpen = card.classList.toggle('open');
+      header.setAttribute('aria-expanded', isOpen);
     });
-  }
+  });
 
-  function updateDots() {
-    const dots = dotsNav.querySelectorAll('.price-dot');
-    dots.forEach((d, i) => d.classList.toggle('active', i === currentTabIndex));
-  }
+  // Quick jump tabs
+  priceTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.dataset.target;
+      const targetCard = document.getElementById(targetId);
 
-  function updateArrows() {
-    if (prevBtn) prevBtn.disabled = currentTabIndex === 0;
-    if (nextBtn) nextBtn.disabled = currentTabIndex >= priceTabs.length - 1;
-  }
+      // Active tab styling
+      priceTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
 
-  function activateTab(index) {
-    currentTabIndex = Math.max(0, Math.min(index, priceTabs.length - 1));
+      if (targetCard) {
+        // Expand target card if closed
+        if (!targetCard.classList.contains('open')) {
+          targetCard.classList.add('open');
+          const header = targetCard.querySelector('.price-card-header');
+          if (header) header.setAttribute('aria-expanded', 'true');
+        }
 
-    const tab = priceTabs[currentTabIndex];
-    const filter = tab.dataset.tab;
+        // Smooth scroll to target card with navbar offset
+        const offset = 90;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = targetCard.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
 
-    // Update tab active state
-    priceTabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-
-    // Show only the matching slide, hide others
-    allSlides.forEach(slide => {
-      slide.style.display = slide.dataset.category === filter ? '' : 'none';
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     });
-
-    // Always reset transform (single visible slide)
-    track.style.transform = 'translateX(0)';
-
-    updateDots();
-    updateArrows();
-  }
-
-  function goToTab(index) {
-    activateTab(index);
-  }
-
-  // Tab click
-  priceTabs.forEach((tab, i) => {
-    tab.addEventListener('click', () => goToTab(i));
   });
 
-  // Arrow navigation
-  if (prevBtn) prevBtn.addEventListener('click', () => goToTab(currentTabIndex - 1));
-  if (nextBtn) nextBtn.addEventListener('click', () => goToTab(currentTabIndex + 1));
+  // IntersectionObserver to update active tab when scrolling
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        priceTabs.forEach(tab => {
+          tab.classList.toggle('active', tab.dataset.target === id);
+        });
+        const activeTab = document.querySelector('.price-tab.active');
+        if (activeTab) {
+          activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+      }
+    });
+  }, { rootMargin: '-20% 0px -60% 0px' });
 
-  // Touch swipe support
-  let touchStartX = 0;
-  let touchStartY = 0;
-  let isDragging = false;
-
-  track.addEventListener('touchstart', e => {
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-    isDragging = true;
-  }, { passive: true });
-
-  track.addEventListener('touchend', e => {
-    if (!isDragging) return;
-    const deltaX = e.changedTouches[0].clientX - touchStartX;
-    const deltaY = e.changedTouches[0].clientY - touchStartY;
-    isDragging = false;
-    if (Math.abs(deltaX) < 40 || Math.abs(deltaX) < Math.abs(deltaY)) return;
-    if (deltaX < 0) goToTab(currentTabIndex + 1);
-    else goToTab(currentTabIndex - 1);
-  }, { passive: true });
-
-  // Mouse drag support (desktop)
-  let mouseStartX = 0;
-  let isMouseDragging = false;
-
-  track.addEventListener('mousedown', e => {
-    mouseStartX = e.clientX;
-    isMouseDragging = true;
-    track.style.cursor = 'grabbing';
-  });
-
-  document.addEventListener('mouseup', e => {
-    if (!isMouseDragging) return;
-    const deltaX = e.clientX - mouseStartX;
-    isMouseDragging = false;
-    track.style.cursor = '';
-    if (Math.abs(deltaX) < 40) return;
-    if (deltaX < 0) goToTab(currentTabIndex + 1);
-    else goToTab(currentTabIndex - 1);
-  });
-
-  // Keyboard navigation (only when carousel is in viewport)
-  document.addEventListener('keydown', e => {
-    const carousel = document.getElementById('priceCarousel');
-    if (!carousel) return;
-    const rect = carousel.getBoundingClientRect();
-    const inView = rect.top < window.innerHeight && rect.bottom > 0;
-    if (!inView) return;
-    if (e.key === 'ArrowLeft') goToTab(currentTabIndex - 1);
-    if (e.key === 'ArrowRight') goToTab(currentTabIndex + 1);
-  });
-
-  // Init — start on first tab (Consultations)
-  buildDots();
-  activateTab(0);
+  accordionCards.forEach(card => observer.observe(card));
 });
+
 
