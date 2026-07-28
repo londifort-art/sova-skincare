@@ -142,8 +142,23 @@ counters.forEach(c => counterObserver.observe(c));
 
 // ===== PRICE ACCORDION & TABS =====
 document.addEventListener('DOMContentLoaded', () => {
+  const priceTabsContainer = document.getElementById('priceTabs');
   const priceTabs = document.querySelectorAll('.price-tab');
   const accordionCards = document.querySelectorAll('.price-accordion-card');
+  let isTabClicking = false;
+  let tabClickTimeout = null;
+
+  // Center active tab horizontally in the tab bar without affecting window scroll
+  function centerTabInBar(tab) {
+    if (!priceTabsContainer || !tab) return;
+    const tabOffset = tab.offsetLeft;
+    const tabWidth = tab.offsetWidth;
+    const containerWidth = priceTabsContainer.clientWidth;
+    priceTabsContainer.scrollTo({
+      left: tabOffset - (containerWidth / 2) + (tabWidth / 2),
+      behavior: 'smooth'
+    });
+  }
 
   // Toggle card expand/collapse
   accordionCards.forEach(card => {
@@ -158,13 +173,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Quick jump tabs
   priceTabs.forEach(tab => {
     tab.addEventListener('click', () => {
+      isTabClicking = true;
+      if (tabClickTimeout) clearTimeout(tabClickTimeout);
+
       const targetId = tab.dataset.target;
       const targetCard = document.getElementById(targetId);
 
       // Active tab styling
       priceTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-      tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      centerTabInBar(tab);
 
       if (targetCard) {
         // Expand target card if closed
@@ -186,26 +204,35 @@ document.addEventListener('DOMContentLoaded', () => {
           behavior: 'smooth'
         });
       }
+
+      tabClickTimeout = setTimeout(() => {
+        isTabClicking = false;
+      }, 1000);
     });
   });
 
-  // IntersectionObserver to update active tab when scrolling
+  // IntersectionObserver to highlight active tab as user scrolls naturally
   const observer = new IntersectionObserver(entries => {
+    if (isTabClicking) return; // Don't conflict with tab click smooth scroll
+
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const id = entry.target.id;
         priceTabs.forEach(tab => {
-          tab.classList.toggle('active', tab.dataset.target === id);
+          const isActive = tab.dataset.target === id;
+          if (isActive && !tab.classList.contains('active')) {
+            tab.classList.add('active');
+            centerTabInBar(tab);
+          } else if (!isActive) {
+            tab.classList.remove('active');
+          }
         });
-        const activeTab = document.querySelector('.price-tab.active');
-        if (activeTab) {
-          activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        }
       }
     });
-  }, { rootMargin: '-20% 0px -60% 0px' });
+  }, { rootMargin: '-20% 0px -50% 0px', threshold: 0.1 });
 
   accordionCards.forEach(card => observer.observe(card));
 });
+
 
 

@@ -725,7 +725,7 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
   flex-wrap: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
   scrollbar-width: none;
   gap: 8px;
   justify-content: flex-start;
