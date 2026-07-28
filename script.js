@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isTabClicking) return; // Don't conflict with tab click smooth scroll
 
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting && entry.target.classList.contains('open')) {
         const id = entry.target.id;
         priceTabs.forEach(tab => {
           const isActive = tab.dataset.target === id;
