@@ -826,8 +826,7 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
   background: #ffffff;
   border: 1px solid rgba(163, 143, 122, 0.15);
   border-radius: var(--radius-lg);
-  padding: 48px 52px;
-  min-height: 480px;
+  padding: 36px 44px;
   display: flex;
   flex-direction: column;
 }
@@ -836,9 +835,9 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
 .price-slide-head {
   display: flex;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 36px;
-  padding-bottom: 28px;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
   border-bottom: 1px solid rgba(163, 143, 122, 0.18);
 }
 
@@ -882,7 +881,7 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 16px 0;
+  padding: 13px 0;
   border-bottom: 1px solid rgba(163, 143, 122, 0.1);
   transition: background 0.2s ease;
   position: relative;
@@ -1029,13 +1028,14 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
   color: var(--charcoal-light);
 }
 
-/* Slide counter / dots navigation */
+/* Slide dots navigation — shown ABOVE content, always visible */
 .price-dots-nav {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  margin-top: 24px;
+  margin-bottom: 16px;
+  padding: 8px 0 0;
 }
 
 .price-dot {
@@ -1063,8 +1063,7 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
   .price-carousel-next { right: -12px; }
 
   .price-slide-inner {
-    padding: 32px 28px;
-    min-height: 400px;
+    padding: 28px 24px;
   }
 }
 
@@ -1086,8 +1085,7 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
   }
 
   .price-slide-inner {
-    padding: 28px 20px;
-    min-height: 360px;
+    padding: 22px 18px;
   }
 
   .price-slide-head {
