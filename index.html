@@ -179,494 +179,582 @@
     </div>
 
     <!-- Category Filter Tabs -->
-    <div class="price-tabs reveal">
+    <div class="price-tabs reveal" id="priceTabs">
       <button class="price-tab active" data-tab="all" data-i18n="price.tab.all">All</button>
       <button class="price-tab" data-tab="consult" data-i18n="price.tab.consult">Consultations</button>
       <button class="price-tab" data-tab="cleansing" data-i18n="price.tab.cleansing">Cleansing</button>
       <button class="price-tab" data-tab="massages" data-i18n="price.tab.massages">Facial Massages</button>
       <button class="price-tab" data-tab="peels" data-i18n="price.tab.peels">Peels</button>
       <button class="price-tab" data-tab="wow" data-i18n="price.tab.wow">WOW Effect</button>
-      <button class="price-tab" data-tab="apparative" data-i18n="price.tab.apparative">Apparative & Meder</button>
+      <button class="price-tab" data-tab="apparative" data-i18n="price.tab.apparative">Apparative &amp; Meder</button>
       <button class="price-tab" data-tab="injections" data-i18n="price.tab.injections">Injectables</button>
-      <button class="price-tab" data-tab="bodymassage" data-i18n="price.tab.bodymassage">Body & Lipozero</button>
+      <button class="price-tab" data-tab="bodymassage" data-i18n="price.tab.bodymassage">Body &amp; Lipozero</button>
       <button class="price-tab" data-tab="waxing" data-i18n="price.tab.waxing">Waxing</button>
-      <button class="price-tab" data-tab="brows" data-i18n="price.tab.brows">Brows & Lashes</button>
+      <button class="price-tab" data-tab="brows" data-i18n="price.tab.brows">Brows &amp; Lashes</button>
     </div>
 
-    <div class="price-grid">
-      <!-- Category: Consultations -->
-      <div class="price-category reveal" data-category="consult">
-        <h3 class="price-category-title"><span class="price-cat-icon">📋</span> <span data-i18n="price.tab.consult">Consultations</span></h3>
-        <div class="price-items">
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.consult.1">Consultation</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 50 €</span>
-              <span class="price-val">40 €</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.consult.2">Consultation + Introductory Procedure</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 90 €</span>
-              <span class="price-val">75 €</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- Carousel wrapper -->
+    <div class="price-carousel-wrapper">
+      <button class="price-carousel-arrow price-carousel-prev" id="priceCarouselPrev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="price-carousel-arrow price-carousel-next" id="priceCarouselNext" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
 
-      <!-- Category: Cleansing -->
-      <div class="price-category reveal" data-category="cleansing">
-        <h3 class="price-category-title"><span class="price-cat-icon">✨</span> <span data-i18n="price.tab.cleansing">Cleansing</span></h3>
-        <div class="price-items">
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.clean.1">Complex Facial Cleansing</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 75 €</span>
-              <span class="price-val">65 €</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.clean.2">Reglow Cleansing</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 80 €</span>
-              <span class="price-val">70 €</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.clean.3">Combined Back Cleansing</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 80 €</span>
-              <span class="price-val">70 €</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.clean.4">Teen Facial Cleansing (under 18)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 60 €</span>
-              <span class="price-val">50 €</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="price-carousel" id="priceCarousel">
+        <div class="price-carousel-track" id="priceCarouselTrack">
 
-      <!-- Category: Facial Massages -->
-      <div class="price-category reveal" data-category="massages">
-        <h3 class="price-category-title"><span class="price-cat-icon">🌸</span> <span data-i18n="price.tab.massages">Facial Massages</span></h3>
-        <div class="price-items">
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.fmsg.1">Myofascial Facial Massage (90 min)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina-only"><span data-i18n="price.karina_badge">Karina</span> 90 €</span>
+        <!-- Category: Consultations -->
+        <div class="price-slide" data-category="consult">
+          <div class="price-slide-inner">
+            <div class="price-slide-head">
+              <div class="price-slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/><path d="M9 12h6M9 16h4"/></svg>
+              </div>
+              <h3 class="price-category-title"><span data-i18n="price.tab.consult">Consultations</span></h3>
             </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.fmsg.2">Ritual with Classic Facial Massage (75 min)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 75 €</span>
-              <span class="price-val">65 €</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.fmsg.3">Apparatus Vacuum Facial Drainage Massage (40 min)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-val">50 €</span>
+            <div class="price-items">
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.consult.1">Consultation</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 50 €</span>
+                  <span class="price-val">40 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.consult.2">Consultation + Introductory Procedure</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 90 €</span>
+                  <span class="price-val">75 €</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Category: Peels -->
-      <div class="price-category reveal" data-category="peels">
-        <h3 class="price-category-title"><span class="price-cat-icon">🌿</span> <span data-i18n="price.tab.peels">Peels</span></h3>
-        <div class="price-items">
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.peel.1">Mint PMP Peel</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 80 €</span>
-              <span class="price-val">70 €</span>
+        <!-- Category: Cleansing -->
+        <div class="price-slide" data-category="cleansing">
+          <div class="price-slide-inner">
+            <div class="price-slide-head">
+              <div class="price-slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+              </div>
+              <h3 class="price-category-title"><span data-i18n="price.tab.cleansing">Cleansing</span></h3>
             </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.peel.2">BioRePeelCl3</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 80 €</span>
-              <span class="price-val">70 €</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.peel.3">Jalupro Glow Peel</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 80 €</span>
-              <span class="price-val">70 €</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.peel.4">Almond / Azelaic Peel</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 60 €</span>
-              <span class="price-val">50 €</span>
+            <div class="price-items">
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.clean.1">Complex Facial Cleansing</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 75 €</span>
+                  <span class="price-val">65 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.clean.2">Reglow Cleansing</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 80 €</span>
+                  <span class="price-val">70 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.clean.3">Combined Back Cleansing</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 80 €</span>
+                  <span class="price-val">70 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.clean.4">Teen Facial Cleansing (under 18)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 60 €</span>
+                  <span class="price-val">50 €</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Category: WOW Effect -->
-      <div class="price-category reveal" data-category="wow">
-        <h3 class="price-category-title"><span class="price-cat-icon">💎</span> <span data-i18n="price.tab.wow">WOW Effect</span></h3>
-        <div class="price-items">
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wow.1">GIGI Bioplasma Therapy (Glow + Lifting)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 80 €</span>
-              <span class="price-val">70 €</span>
+        <!-- Category: Facial Massages -->
+        <div class="price-slide" data-category="massages">
+          <div class="price-slide-inner">
+            <div class="price-slide-head">
+              <div class="price-slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <h3 class="price-category-title"><span data-i18n="price.tab.massages">Facial Massages</span></h3>
             </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wow.2">Non-Invasive Carboxy Therapy + Bioplasma</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 105 €</span>
-              <span class="price-val">95 €</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wow.3">Non-Invasive Carboxy Therapy + Massage</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 95 €</span>
-              <span class="price-val">85 €</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wow.4">Non-Invasive Carboxy + Electroporation</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 95 €</span>
-              <span class="price-val">85 €</span>
+            <div class="price-items">
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.fmsg.1">Myofascial Facial Massage (90 min)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina-only"><span data-i18n="price.karina_badge">Karina</span> 90 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.fmsg.2">Ritual with Classic Facial Massage (75 min)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 75 €</span>
+                  <span class="price-val">65 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.fmsg.3">Apparatus Vacuum Facial Drainage Massage (40 min)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-val">50 €</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Category: Apparative & Meder -->
-      <div class="price-category reveal" data-category="apparative">
-        <h3 class="price-category-title"><span class="price-cat-icon">⚡</span> <span data-i18n="price.tab.apparative">Apparative & Meder</span></h3>
-        <div class="price-items">
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.app.1">Microcurrent Facial Therapy</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 80 €</span>
-              <span class="price-val">70 €</span>
+        <!-- Category: Peels -->
+        <div class="price-slide" data-category="peels">
+          <div class="price-slide-inner">
+            <div class="price-slide-head">
+              <div class="price-slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 class="price-category-title"><span data-i18n="price.tab.peels">Peels</span></h3>
             </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.app.2">Facial Myostimulation</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 60 €</span>
-              <span class="price-val">50 €</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.app.3">Multipolar RF Facial Lifting (Drainage + RF + LED)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-val">60 €</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.app.4">Subscription (6 treatments)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-val">324 €</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.app.5">Subscription (10 treatments)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-val">510 €</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.meder.1">Meder Protocol (Hydra Fill / Lipo Oval / Arma Lift etc.)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-val">85 €</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.meder.2">Standard Meder Protocol + Microcurrents</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-val">100 €</span>
+            <div class="price-items">
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.peel.1">Mint PMP Peel</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 80 €</span>
+                  <span class="price-val">70 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.peel.2">BioRePeelCl3</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 80 €</span>
+                  <span class="price-val">70 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.peel.3">Jalupro Glow Peel</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 80 €</span>
+                  <span class="price-val">70 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.peel.4">Almond / Azelaic Peel</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 60 €</span>
+                  <span class="price-val">50 €</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Category: Injectables -->
-      <div class="price-category reveal" data-category="injections">
-        <h3 class="price-category-title"><span class="price-cat-icon">💉</span> <span data-i18n="price.tab.injections">Injectables</span></h3>
-        <div class="price-items">
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.inj.1">Dermapen (Microneedling + Mesococktail)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">120 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.inj.2">Exosomes Vtech (Dermapen)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">180 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.inj.3">Neauvia Hydro Deluxe (2.5 ml)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">220 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.inj.4">Teosyal Redensity 1 (1 ml)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">180 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.inj.5">Teosyal Redensity 1 (3 ml)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">300 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.inj.6">Filorga NCTF 135 HA (3 ml)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">155 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.inj.7">Polynucleotides PDRN (2 ml)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">220 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.inj.8">Cellbooster Glow / Lift / Hair (3 ml)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">140 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.inj.9">Eye Mesotherapy (1.5 ml)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">80 €</span></div>
-          </div>
-        </div>
-        <div class="price-promo-card">
-          <div class="price-promo-badge">-15% OFF</div>
-          <p data-i18n="price.discount_inject">15% discount applies when purchasing and paying for a full course of injectable procedures.</p>
-        </div>
-      </div>
-
-      <!-- Category: Body & Lipozero -->
-      <div class="price-category reveal" data-category="bodymassage">
-        <h3 class="price-category-title"><span class="price-cat-icon">⏳</span> <span data-i18n="price.tab.bodymassage">Body & Lipozero</span></h3>
-        <div class="price-items">
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.bmsg.1">Classic Body Massage (60 min)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">45 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.bmsg.2">Relaxing Full Body & Head Massage (90 min)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">55 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.bmsg.3">Honey Body Massage (60 min)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">45 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.bmsg.4">Anti-Cellulite Body Massage (60 min)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">45 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.bmsg.5">Anti-Cellulite Massage + Body Wrap (90 min)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">55 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.bmsg.6">Anti-Cellulite Massage + Wrap + Facial Massage (120 min)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">80 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.bmsg.7">Anti-Cellulite Massage + Wrap + Reglow (120 min)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">90 €</span></div>
-          </div>
-          <div class="price-item highlight-item">
-            <span class="price-name" data-i18n="price.bmsg.8">Lipozero 5D Body Contouring</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">60 €</span></div>
-          </div>
-          <div class="price-item highlight-item">
-            <span class="price-name" data-i18n="price.bmsg.9">Lipozero 5D Body Contouring (10 treatments)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-old">600 €</span>
-              <span class="price-val price-discount">540 €</span>
+        <!-- Category: WOW Effect -->
+        <div class="price-slide" data-category="wow">
+          <div class="price-slide-inner">
+            <div class="price-slide-head">
+              <div class="price-slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <h3 class="price-category-title"><span data-i18n="price.tab.wow">WOW Effect</span></h3>
+            </div>
+            <div class="price-items">
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wow.1">GIGI Bioplasma Therapy (Glow + Lifting)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 80 €</span>
+                  <span class="price-val">70 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wow.2">Non-Invasive Carboxy Therapy + Bioplasma</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 105 €</span>
+                  <span class="price-val">95 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wow.3">Non-Invasive Carboxy Therapy + Massage</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 95 €</span>
+                  <span class="price-val">85 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wow.4">Non-Invasive Carboxy + Electroporation</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 95 €</span>
+                  <span class="price-val">85 €</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.bmsg.10">Lipozero + Pressotherapy Vacuum Boots</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">80 €</span></div>
-          </div>
-          <div class="price-item highlight-item">
-            <span class="price-name" data-i18n="price.bmsg.11">8 Lipozero + 4 Pressotherapy Boots Package</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group">
-              <span class="price-old">560 €</span>
-              <span class="price-val price-discount">500 €</span>
+        </div>
+
+        <!-- Category: Apparative & Meder -->
+        <div class="price-slide" data-category="apparative">
+          <div class="price-slide-inner">
+            <div class="price-slide-head">
+              <div class="price-slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+              </div>
+              <h3 class="price-category-title"><span data-i18n="price.tab.apparative">Apparative &amp; Meder</span></h3>
+            </div>
+            <div class="price-items">
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.app.1">Microcurrent Facial Therapy</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 80 €</span>
+                  <span class="price-val">70 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.app.2">Facial Myostimulation</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-karina"><span data-i18n="price.karina_badge">Karina</span> 60 €</span>
+                  <span class="price-val">50 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.app.3">Multipolar RF Facial Lifting (Drainage + RF + LED)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-val">60 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.app.4">Subscription (6 treatments)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-val">324 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.app.5">Subscription (10 treatments)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-val">510 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.meder.1">Meder Protocol (Hydra Fill / Lipo Oval / Arma Lift etc.)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-val">85 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.meder.2">Standard Meder Protocol + Microcurrents</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-val">100 €</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.bmsg.12">Pressotherapy Vacuum Boots (30 min)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">25 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.bmsg.13">Pressotherapy Vacuum Boots (40 min)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">33 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.bmsg.14">Pressotherapy Subscription (5 x 40 min)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">150 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.bmsg.15">Pressotherapy Subscription (10 x 40 min)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">290 €</span></div>
+        </div>
+
+        <!-- Category: Injectables -->
+        <div class="price-slide" data-category="injections">
+          <div class="price-slide-inner">
+            <div class="price-slide-head">
+              <div class="price-slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="m18 2 4 4-14 14H4v-4L18 2z"/><path d="m14.5 5.5 4 4"/></svg>
+              </div>
+              <h3 class="price-category-title"><span data-i18n="price.tab.injections">Injectables</span></h3>
+            </div>
+            <div class="price-items">
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.inj.1">Dermapen (Microneedling + Mesococktail)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">120 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.inj.2">Exosomes Vtech (Dermapen)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">180 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.inj.3">Neauvia Hydro Deluxe (2.5 ml)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">220 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.inj.4">Teosyal Redensity 1 (1 ml)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">180 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.inj.5">Teosyal Redensity 1 (3 ml)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">300 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.inj.6">Filorga NCTF 135 HA (3 ml)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">155 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.inj.7">Polynucleotides PDRN (2 ml)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">220 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.inj.8">Cellbooster Glow / Lift / Hair (3 ml)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">140 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.inj.9">Eye Mesotherapy (1.5 ml)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">80 €</span></div>
+              </div>
+            </div>
+            <div class="price-promo-card">
+              <div class="price-promo-badge">-15% OFF</div>
+              <p data-i18n="price.discount_inject">15% discount applies when purchasing and paying for a full course of injectable procedures.</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Category: Waxing -->
-      <div class="price-category reveal" data-category="waxing">
-        <h3 class="price-category-title"><span class="price-cat-icon">🍯</span> <span data-i18n="price.tab.waxing">Waxing</span></h3>
-        <div class="price-items">
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wax.1">Deep Bikini</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">25 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wax.2">Classic Bikini</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">20 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wax.3">Legs (Lower or Upper)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">25 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wax.4">Full Legs</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">30 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wax.5">Underarms</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">15 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wax.6">Forearms</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">20 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wax.7">Full Arms</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">25 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wax.8">Facial Zone</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">15 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wax.9">Upper Lip Zone</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">7 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wax.10">Deep Bikini + Underarms</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">35 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wax.11">Deep Bikini + Legs (Half)</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">40 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wax.12">Deep Bikini + Full Legs</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">50 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wax.13">Deep Bikini + Lower Legs + Underarms</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">50 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wax.14">Deep Bikini + Full Legs + Underarms</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">55 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.wax.15">Deep Bikini + Full Legs + Underarms + Full Arms</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">75 €</span></div>
+        <!-- Category: Body & Lipozero -->
+        <div class="price-slide" data-category="bodymassage">
+          <div class="price-slide-inner">
+            <div class="price-slide-head">
+              <div class="price-slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/><path d="M8 12h8"/></svg>
+              </div>
+              <h3 class="price-category-title"><span data-i18n="price.tab.bodymassage">Body &amp; Lipozero</span></h3>
+            </div>
+            <div class="price-items">
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.bmsg.1">Classic Body Massage (60 min)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">45 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.bmsg.2">Relaxing Full Body & Head Massage (90 min)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">55 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.bmsg.3">Honey Body Massage (60 min)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">45 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.bmsg.4">Anti-Cellulite Body Massage (60 min)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">45 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.bmsg.5">Anti-Cellulite Massage + Body Wrap (90 min)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">55 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.bmsg.6">Anti-Cellulite Massage + Wrap + Facial Massage (120 min)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">80 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.bmsg.7">Anti-Cellulite Massage + Wrap + Reglow (120 min)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">90 €</span></div>
+              </div>
+              <div class="price-item highlight-item">
+                <span class="price-name" data-i18n="price.bmsg.8">Lipozero 5D Body Contouring</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">60 €</span></div>
+              </div>
+              <div class="price-item highlight-item">
+                <span class="price-name" data-i18n="price.bmsg.9">Lipozero 5D Body Contouring (10 treatments)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-old">600 €</span>
+                  <span class="price-val price-discount">540 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.bmsg.10">Lipozero + Pressotherapy Vacuum Boots</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">80 €</span></div>
+              </div>
+              <div class="price-item highlight-item">
+                <span class="price-name" data-i18n="price.bmsg.11">8 Lipozero + 4 Pressotherapy Boots Package</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group">
+                  <span class="price-old">560 €</span>
+                  <span class="price-val price-discount">500 €</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.bmsg.12">Pressotherapy Vacuum Boots (30 min)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">25 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.bmsg.13">Pressotherapy Vacuum Boots (40 min)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">33 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.bmsg.14">Pressotherapy Subscription (5 x 40 min)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">150 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.bmsg.15">Pressotherapy Subscription (10 x 40 min)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">290 €</span></div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Category: Brows & Lashes -->
-      <div class="price-category reveal" data-category="brows">
-        <h3 class="price-category-title"><span class="price-cat-icon">👁️</span> <span data-i18n="price.tab.brows">Brows & Lashes</span></h3>
-        <div class="price-items">
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.brow.1">Eyebrow Shaping + Tinting</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">20 €</span></div>
-          </div>
-          <div class="price-item">
-            <span class="price-name" data-i18n="price.brow.2">Eyelash Tinting</span>
-            <span class="price-dots"></span>
-            <div class="price-val-group"><span class="price-val">10 €</span></div>
+        <!-- Category: Waxing -->
+        <div class="price-slide" data-category="waxing">
+          <div class="price-slide-inner">
+            <div class="price-slide-head">
+              <div class="price-slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 22C6 22 2 17 2 12c0-1.5.3-3 .9-4.3M22 12c0 5-4 10-10 10"/><path d="M2.9 7.7C4.4 4.4 8 2 12 2c5.5 0 10 4.5 10 10"/><path d="M8 12s1.5-2 4-2 4 2 4 2"/></svg>
+              </div>
+              <h3 class="price-category-title"><span data-i18n="price.tab.waxing">Waxing</span></h3>
+            </div>
+            <div class="price-items">
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wax.1">Deep Bikini</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">25 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wax.2">Classic Bikini</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">20 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wax.3">Legs (Lower or Upper)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">25 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wax.4">Full Legs</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">30 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wax.5">Underarms</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">15 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wax.6">Forearms</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">20 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wax.7">Full Arms</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">25 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wax.8">Facial Zone</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">15 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wax.9">Upper Lip Zone</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">7 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wax.10">Deep Bikini + Underarms</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">35 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wax.11">Deep Bikini + Legs (Half)</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">40 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wax.12">Deep Bikini + Full Legs</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">50 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wax.13">Deep Bikini + Lower Legs + Underarms</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">50 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wax.14">Deep Bikini + Full Legs + Underarms</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">55 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.wax.15">Deep Bikini + Full Legs + Underarms + Full Arms</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">75 €</span></div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-    </div>
+        <!-- Category: Brows & Lashes -->
+        <div class="price-slide" data-category="brows">
+          <div class="price-slide-inner">
+            <div class="price-slide-head">
+              <div class="price-slide-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <h3 class="price-category-title"><span data-i18n="price.tab.brows">Brows &amp; Lashes</span></h3>
+            </div>
+            <div class="price-items">
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.brow.1">Eyebrow Shaping + Tinting</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">20 €</span></div>
+              </div>
+              <div class="price-item">
+                <span class="price-name" data-i18n="price.brow.2">Eyelash Tinting</span>
+                <span class="price-dots"></span>
+                <div class="price-val-group"><span class="price-val">10 €</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end track -->
+    </div><!-- end carousel -->
+
+    <!-- Slide indicators (dots) -->
+    <div class="price-dots-nav" id="priceDotsNav"></div>
+
+    </div><!-- close carousel-wrapper -->
   </div>
 </section>
+
 
 <!-- ===== ABOUT ===== -->
 <section class="about" id="about">
