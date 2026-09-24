@@ -1652,14 +1652,14 @@
 
         <!-- Voucher Details & QR -->
         <div class="gc-voucher-sheet">
-          <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px;">
-            <div>
+          <div class="gc-voucher-row">
+            <div class="gc-voucher-info">
               <span class="gc-voucher-code-lbl" data-i18n="giftcards.card_code_label">SECURITY CODE</span>
               <div class="gc-voucher-code-val" id="gcSuccessCodeDisplay"></div>
-              <div style="font-size: 0.82rem; color: #7A6956; margin-top: 6px;">
+              <div class="gc-voucher-expiry">
                 <span data-i18n="giftcards.valid_until">Valid until</span>: <strong id="gcSuccessExpiry"></strong>
               </div>
-              <div style="font-size: 0.78rem; color: #9C8975; margin-top: 4px;">
+              <div class="gc-voucher-address">
                 📍 Tallinas iela 95, Rīga · dikidi.net/1447376 · @sova_skincare
               </div>
             </div>
@@ -1680,22 +1680,24 @@
 
         <!-- Action Buttons -->
         <div class="gc-success-actions">
-          <button type="button" class="btn btn-primary" id="gcDownloadPdfBtn" style="padding: 10px 18px; font-size: 0.88rem;">
+          <button type="button" class="btn btn-primary gc-btn-full" id="gcDownloadPdfBtn">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             <span data-i18n="giftcards.btn_download_pdf">Скачать PDF</span>
           </button>
-          <a id="gcSendEmailBtn" class="btn btn-outline" style="padding: 10px 16px; font-size: 0.88rem;" target="_blank">
+          <a id="gcSendEmailBtn" class="btn btn-outline gc-btn-full" target="_blank">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <span data-i18n="giftcards.btn_email_copy">Отправить на Email</span>
           </a>
-          <button type="button" class="btn btn-outline" id="gcCopyBtn" style="padding: 10px 16px; font-size: 0.88rem;">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            <span data-i18n="giftcards.btn_copy">Скопировать код</span>
-          </button>
-          <button type="button" class="btn btn-outline" id="gcTestInScannerBtn" style="padding: 10px 16px; font-size: 0.88rem;">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
-            <span data-i18n="giftcards.btn_verify">Проверить в сканере</span>
-          </button>
+          <div class="gc-success-actions-row">
+            <button type="button" class="btn btn-outline gc-btn-half" id="gcCopyBtn">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span data-i18n="giftcards.btn_copy">Скопировать код</span>
+            </button>
+            <button type="button" class="btn btn-outline gc-btn-half" id="gcTestInScannerBtn">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
+              <span data-i18n="giftcards.btn_verify">Проверить в сканере</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

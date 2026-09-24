@@ -3010,10 +3010,37 @@ body.modal-open {
 
 .gc-success-actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 10px;
-  margin-top: 18px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.gc-btn-full {
+  width: 100%;
   justify-content: center;
+  padding: 12px 20px;
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gc-success-actions-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.gc-btn-half {
+  flex: 1;
+  justify-content: center;
+  padding: 10px 14px;
+  font-size: 0.86rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
 }
 
 /* Digital Certificate Detailed Voucher Display */
@@ -3053,6 +3080,32 @@ body.modal-open {
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--charcoal);
+}
+
+.gc-voucher-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.gc-voucher-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.gc-voucher-expiry {
+  font-size: 0.82rem;
+  color: #7A6956;
+  margin-top: 6px;
+}
+
+.gc-voucher-address {
+  font-size: 0.78rem;
+  color: #9C8975;
+  margin-top: 4px;
+  line-height: 1.35;
+  word-break: break-word;
 }
 
 .gc-qr-box {
@@ -3256,26 +3309,283 @@ body.modal-open {
   box-shadow: 0 4px 14px rgba(27, 94, 32, 0.25);
 }
 
-/* Responsive styles */
+/* ===== RESPONSIVE STYLES FOR GIFT CARDS & MODALS ===== */
 @media (max-width: 900px) {
   .gc-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
   .gc-preview-col {
     position: static;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 }
 
-@media (max-width: 480px) {
-  .gc-designer-panel {
-    padding: 22px 18px;
+@media (max-width: 600px) {
+  /* Modals on Mobile Phones */
+  .procedure-modal-overlay {
+    padding: 8px 6px !important;
   }
+  .procedure-modal-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .procedure-modal {
+    max-height: 94vh !important;
+    border-radius: 20px !important;
+  }
+  .procedure-modal-header,
+  .gc-success-header {
+    padding: 16px 14px 10px !important;
+  }
+  .gc-success-icon {
+    width: 40px !important;
+    height: 40px !important;
+    margin-bottom: 8px !important;
+  }
+  .procedure-modal-close {
+    top: 10px !important;
+    right: 10px !important;
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .procedure-modal-title {
+    font-size: 1.25rem !important;
+    padding-right: 28px !important;
+    line-height: 1.25 !important;
+  }
+  .procedure-modal-summary {
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    margin-top: 4px !important;
+  }
+  .procedure-modal-body {
+    padding: 10px 12px 18px !important;
+    gap: 12px !important;
+  }
+
+  /* Card on Mobile Phones: NEVER CLIPPED */
   .gc-card {
-    padding: 20px;
+    aspect-ratio: auto !important;
+    min-height: 210px !important;
+    padding: 16px 14px 12px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16) !important;
+  }
+  .gc-card-brand-title {
+    font-size: 1.2rem !important;
+  }
+  .gc-card-brand-sub {
+    font-size: 0.56rem !important;
+  }
+  .gc-card-seal {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .gc-card-seal svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .gc-card-middle {
+    margin: 6px 0 !important;
   }
   .gc-card-value {
-    font-size: 2rem;
+    font-size: 1.95rem !important;
+    line-height: 1 !important;
+  }
+  .gc-card-subtitle {
+    font-size: 0.7rem !important;
+  }
+  .gc-card-msg-box {
+    font-size: 0.74rem !important;
+    line-height: 1.35 !important;
+    max-height: 36px !important;
+    margin: 4px 0 !important;
+  }
+  .gc-card-footer {
+    padding-top: 8px !important;
+  }
+  .gc-card-persons {
+    gap: 12px !important;
+  }
+  .gc-card-person-lbl {
+    font-size: 0.54rem !important;
+  }
+  .gc-card-person-val {
+    font-size: 0.84rem !important;
+  }
+  .gc-card-serial {
+    font-size: 0.62rem !important;
+  }
+
+  /* Voucher Sheet on Mobile: Flexible & Compact */
+  .gc-voucher-sheet {
+    padding: 12px 14px !important;
+    border-radius: 14px !important;
+    margin-top: 8px !important;
+  }
+  .gc-voucher-row {
+    gap: 12px !important;
+  }
+  .gc-voucher-code-val {
+    font-size: 0.98rem !important;
+    letter-spacing: 0.03em !important;
+    word-break: break-all !important;
+  }
+  .gc-voucher-expiry {
+    font-size: 0.78rem !important;
+    margin-top: 4px !important;
+  }
+  .gc-voucher-address {
+    font-size: 0.74rem !important;
+    margin-top: 3px !important;
+  }
+  .gc-qr-box {
+    width: 80px !important;
+    height: 80px !important;
+    min-width: 80px !important;
+    padding: 4px !important;
+    border-radius: 10px !important;
+  }
+
+  /* Delivery Status Notice on Mobile */
+  .gc-delivery-status {
+    padding: 10px 12px !important;
+    font-size: 0.78rem !important;
+    gap: 8px !important;
+    border-radius: 10px !important;
+    margin-top: 8px !important;
+  }
+  .gc-delivery-text {
+    font-size: 0.78rem !important;
+    line-height: 1.4 !important;
+  }
+  .gc-delivery-sub {
+    font-size: 0.72rem !important;
+    margin-top: 2px !important;
+  }
+
+  /* Action Buttons: Full Width Stack on Mobile */
+  .gc-success-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+  .gc-success-actions button,
+  .gc-success-actions a {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px 14px !important;
+    font-size: 0.88rem !important;
+  }
+
+  /* Designer Panel on Mobile */
+  .gc-designer-panel {
+    padding: 18px 14px !important;
+    border-radius: 18px !important;
+  }
+  .gc-chips {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+  .gc-chip-btn {
+    padding: 10px 10px !important;
+    font-size: 0.9rem !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+  .gc-chip-btn[data-amount="custom"] {
+    grid-column: span 2 !important;
+  }
+  .gc-theme-swatches {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+  }
+  .gc-theme-btn {
+    padding: 8px 4px !important;
+    font-size: 0.72rem !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    border-radius: 12px !important;
+  }
+  .gc-swatch-circle {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  .gc-buy-btn {
+    padding: 14px 18px !important;
+    font-size: 0.92rem !important;
+  }
+
+  /* Saved Banner on Mobile */
+  .gc-saved-banner {
+    padding: 12px 14px !important;
+    border-radius: 14px !important;
+    margin-bottom: 20px !important;
+  }
+  .gc-saved-banner-content {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+  .gc-saved-banner-actions {
+    display: flex !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .gc-saved-banner-actions .btn {
+    flex: 1 !important;
+    justify-content: center !important;
+    font-size: 0.82rem !important;
+    padding: 10px 12px !important;
+  }
+
+  /* Scanner Dialog on Mobile */
+  .gc-scanner-dialog {
+    max-width: 100% !important;
+  }
+  .gc-camera-wrapper {
+    max-height: 240px !important;
+  }
+  .gc-manual-form {
+    flex-direction: column !important;
+  }
+  .gc-manual-form .btn {
+    width: 100% !important;
+    padding: 12px !important;
+  }
+  .gc-result-info-grid {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .gc-card {
+    min-height: 195px !important;
+    padding: 12px 10px !important;
+  }
+  .gc-card-value {
+    font-size: 1.8rem !important;
+  }
+  .gc-voucher-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 10px !important;
+  }
+  .gc-voucher-info {
+    text-align: center !important;
+  }
+  .gc-theme-btn {
+    font-size: 0.66rem !important;
   }
 }
 
