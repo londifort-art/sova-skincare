@@ -18,10 +18,28 @@ function setLanguage(lang) {
     }
   });
 
+  // Update translatable placeholders
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const key = el.getAttribute('data-i18n-ph');
+    if (translations[lang] && translations[lang][key]) {
+      el.placeholder = translations[lang][key];
+    }
+  });
+
   // Update active state on switcher buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
+
+  // Re-render open procedure modal if active
+  if (typeof updateModalContent === 'function') {
+    updateModalContent();
+  }
+
+  // Update gift card preview if available
+  if (window.SovaGiftCards && typeof window.SovaGiftCards.updateLanguage === 'function') {
+    window.SovaGiftCards.updateLanguage();
+  }
 }
 
 // Init language on load
@@ -232,6 +250,120 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { rootMargin: '-20% 0px -50% 0px', threshold: 0.1 });
 
   accordionCards.forEach(card => observer.observe(card));
+});
+
+// ===== PROCEDURE DETAILS MODAL =====
+let currentModalProcKey = null;
+
+function openProcedureModal(procKey) {
+  if (typeof procedureDescriptions === 'undefined' || !procedureDescriptions[procKey]) {
+    console.warn('Procedure description not found for key:', procKey);
+    return;
+  }
+
+  currentModalProcKey = procKey;
+  updateModalContent();
+
+  const modalOverlay = document.getElementById('procedureModal');
+  if (modalOverlay) {
+    modalOverlay.classList.add('active');
+    modalOverlay.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+}
+
+function closeProcedureModal() {
+  const modalOverlay = document.getElementById('procedureModal');
+  if (modalOverlay) {
+    modalOverlay.classList.remove('active');
+    modalOverlay.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  }
+  currentModalProcKey = null;
+}
+
+function updateModalContent() {
+  if (!currentModalProcKey || typeof procedureDescriptions === 'undefined') return;
+  const procData = procedureDescriptions[currentModalProcKey];
+  if (!procData) return;
+
+  const lang = (typeof currentLang !== 'undefined' ? currentLang : 'ru');
+  const langData = procData[lang] || procData['ru'] || procData['lv'] || procData['en'];
+  if (!langData) return;
+
+  const badgeEl = document.getElementById('modalProcBadge');
+  const titleEl = document.getElementById('modalProcTitle');
+  const summaryEl = document.getElementById('modalProcSummary');
+  const benefitsSec = document.getElementById('modalSectionBenefits');
+  const benefitsList = document.getElementById('modalProcBenefits');
+  const stepsSec = document.getElementById('modalSectionSteps');
+  const stepsList = document.getElementById('modalProcSteps');
+  const suitableSec = document.getElementById('modalSectionSuitable');
+  const suitableTags = document.getElementById('modalProcSuitable');
+
+  if (badgeEl) badgeEl.textContent = langData.category || '';
+  if (titleEl) titleEl.textContent = langData.title || '';
+  if (summaryEl) summaryEl.textContent = langData.summary || '';
+
+  // Benefits
+  if (benefitsSec && benefitsList) {
+    if (langData.benefits && langData.benefits.length > 0) {
+      benefitsSec.style.display = 'block';
+      benefitsList.innerHTML = langData.benefits.map(b => `<li>${b}</li>`).join('');
+    } else {
+      benefitsSec.style.display = 'none';
+    }
+  }
+
+  // Steps
+  if (stepsSec && stepsList) {
+    if (langData.steps && langData.steps.length > 0) {
+      stepsSec.style.display = 'block';
+      stepsList.innerHTML = langData.steps.map(s => `<li>${s}</li>`).join('');
+    } else {
+      stepsSec.style.display = 'none';
+    }
+  }
+
+  // Suitable for
+  if (suitableSec && suitableTags) {
+    if (langData.suitableFor && langData.suitableFor.length > 0) {
+      suitableSec.style.display = 'block';
+      suitableTags.innerHTML = langData.suitableFor.map(t => `<span class="procedure-modal-tag">${t}</span>`).join('');
+    } else {
+      suitableSec.style.display = 'none';
+    }
+  }
+}
+
+// Bind modal listeners
+document.addEventListener('DOMContentLoaded', () => {
+  // Delegate clicks on info buttons
+  document.addEventListener('click', (e) => {
+    const infoBtn = e.target.closest('.price-info-btn');
+    if (infoBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const procKey = infoBtn.getAttribute('data-procedure');
+      if (procKey) {
+        openProcedureModal(procKey);
+      }
+    }
+  });
+
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modalCloseBtn = document.getElementById('modalCloseBtn');
+  const modalSecondaryClose = document.getElementById('modalSecondaryClose');
+
+  if (modalBackdrop) modalBackdrop.addEventListener('click', closeProcedureModal);
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeProcedureModal);
+  if (modalSecondaryClose) modalSecondaryClose.addEventListener('click', closeProcedureModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeProcedureModal();
+    }
+  });
 });
 
 
