@@ -2019,6 +2019,27 @@ const descriptions = {
   }
 };
 
+// Keep regenerated descriptions aligned with the public price groups and LV labels.
+const apparatusCategories = {ru: 'Аппаратная косметология', lv: 'Aparātu kosmetoloģija', en: 'Device Cosmetology'};
+for (const [key, languages] of Object.entries(descriptions)) {
+  for (const [lang, data] of Object.entries(languages)) {
+    if (key.startsWith('meder.')) data.category = 'Meder by Dr. Tiina Meder';
+    if (key.startsWith('app.')) data.category = apparatusCategories[lang];
+    if (lang !== 'lv') continue;
+    if (/Vaks/i.test(data.category)) data.category = 'Depilācija ar vasku';
+    const normalize = text => text
+      .replace(/Mikrostrāvu/g, 'Mikro strāvu')
+      .replace(/mikrostrāvu/g, 'mikro strāvu')
+      .replace(/mikrotoku terapij/gi, 'mikro strāvu terapij')
+      .replace(/mikrotoki/gi, 'mikro strāvu terapija')
+      .replace(/mikrotoku/gi, 'mikro strāvu');
+    for (const [field, value] of Object.entries(data)) {
+      if (typeof value === 'string') data[field] = normalize(value);
+      else if (Array.isArray(value)) data[field] = value.map(normalize);
+    }
+  }
+}
+
 const fullOutput = `// Auto-generated procedure descriptions database for SOVA SKINCARE
 // Contains full descriptions in RU, LV, EN
 const procedureDescriptions = ${JSON.stringify(descriptions, null, 2)};

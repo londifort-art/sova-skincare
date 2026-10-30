@@ -1,5 +1,4 @@
-// Auto-generated procedure descriptions database for SOVA SKINCARE
-// Contains full descriptions in RU, LV, EN
+// Procedure descriptions for SOVA SKINCARE — RU, LV, EN
 const procedureDescriptions = {
   "consult.1": {
     "ru": {
@@ -1183,7 +1182,7 @@ const procedureDescriptions = {
     "lv": {
       "category": "WOW Efekts",
       "title": "Mikrostrāvas + Carboxy therapy",
-      "summary": "Dziļš liftinga un ādas atjaunošanas protokols ar tūlītēju iedarbību, apvienojot karboksiterapijas skābekļa pieplūdi ar mikrostrāvu šūnu stimulāciju.",
+      "summary": "Dziļš liftinga un ādas atjaunošanas protokols ar tūlītēju iedarbību, apvienojot karboksiterapijas skābekļa pieplūdi ar mikro strāvu šūnu stimulāciju.",
       "benefits": [
         "Dziļš muskuļu un audu liftings",
         "Šūnu enerģijas (ATF) ražošanas stimulēšana",
@@ -1193,7 +1192,7 @@ const procedureDescriptions = {
       "steps": [
         "Ādas sagatavošana",
         "Karboksiterapijas iedarbība",
-        "Aparāta mikrostrāvu terapija",
+        "Aparāta mikro strāvu terapija",
         "Atjaunojoša maska",
         "Noslēdzošais krēms"
       ],
@@ -1252,8 +1251,8 @@ const procedureDescriptions = {
       ]
     },
     "lv": {
-      "category": "Aparātprocedūras",
-      "title": "Mikrostrāvu terapija OVERLINE EXENTIAL (Itālija)",
+      "category": "Aparātu kosmetoloģija",
+      "title": "Mikro strāvu terapija OVERLINE EXENTIAL (Itālija)",
       "summary": "4 fāžu sejas atjaunošanas procedūra ar Itālijas vadošajām tehnoloģijām: limfodrenāža, šūnu stimulācija, mioliftings un aktīvo vielu ievadīšana.",
       "benefits": [
         "Muskuļu tonusa un sejas kontūru atjaunošana",
@@ -1275,7 +1274,7 @@ const procedureDescriptions = {
       ]
     },
     "en": {
-      "category": "Apparative Aesthetics",
+      "category": "Device Cosmetology",
       "title": "Overline Exential Microcurrent Therapy (Italy)",
       "summary": "Italian-engineered 4-phase microcurrent technology: lymphatic drainage, bio-cellular recharge, myofacial lifting, and transdermal active infusion.",
       "benefits": [
@@ -1322,7 +1321,7 @@ const procedureDescriptions = {
       ]
     },
     "lv": {
-      "category": "Aparātprocedūras",
+      "category": "Aparātu kosmetoloģija",
       "title": "Sejas miostimulācija",
       "summary": "Mērķtiecīga sejas muskuļu trenēšana ar elektriskajiem impulsiem, atgriežot stingru ovālu un vaigu kaulu izteiksmīgumu.",
       "benefits": [
@@ -1344,7 +1343,7 @@ const procedureDescriptions = {
       ]
     },
     "en": {
-      "category": "Apparative Aesthetics",
+      "category": "Device Cosmetology",
       "title": "Facial Myostimulation",
       "summary": "Passive gym training for facial muscles. Precise electrical impulses tone lax muscle fibers, elevating the cheeks and sculpting the jawline.",
       "benefits": [
@@ -1391,7 +1390,7 @@ const procedureDescriptions = {
       ]
     },
     "lv": {
-      "category": "Aparātprocedūras",
+      "category": "Aparātu kosmetoloģija",
       "title": "RF liftings (Drenāža + RF + LED)",
       "summary": "Kompleksa sejas kopšanas procedūra, kas apvieno drenāžas tehniku, radiofrekvences (RF) liftingu un LED gaismas terapiju ādas tvirtuma atjaunošanai.",
       "benefits": [
@@ -1414,7 +1413,7 @@ const procedureDescriptions = {
       ]
     },
     "en": {
-      "category": "Apparative Aesthetics",
+      "category": "Device Cosmetology",
       "title": "Multipolar RF Facial Lifting (Drainage + RF + LED)",
       "summary": "Triple-action thermal rejuvenation combining controlled radiofrequency dermal heating, mechanical vacuum drainage, and photobiomodulation LED therapy.",
       "benefits": [
@@ -1439,7 +1438,7 @@ const procedureDescriptions = {
   },
   "meder.1": {
     "ru": {
-      "category": "Meder Beauty Science",
+      "category": "Meder by Dr. Tiina Meder",
       "title": "Протоколы Meder Beauty Science (Швейцария)",
       "summary": "Швейцарская неинвазивная нейрокосмецевтика мирового уровня. Протоколы: Hydra-Fill (глубокое увлажнение), Lipo-Oval (липолифтинг второго подбородка), Arma-Lift (гравитационный лифтинг), Red-Apax (купероз и розацеа).",
       "benefits": [
@@ -1464,7 +1463,7 @@ const procedureDescriptions = {
       ]
     },
     "lv": {
-      "category": "Meder Beauty Science",
+      "category": "Meder by Dr. Tiina Meder",
       "title": "MEDER BEAUTY SCIENCE procedūra (Šveice)",
       "summary": "Meder Beauty Science – Šveices klases “premium” kosmētikas zīmols ar zinātniski pamatotām, augsti efektīvām procedūrām bez injekcijām (Hydra-Fill, Lipo-Oval, Arma-Lift, Red-Apax).",
       "benefits": [
@@ -1489,7 +1488,7 @@ const procedureDescriptions = {
       ]
     },
     "en": {
-      "category": "Meder Beauty Science",
+      "category": "Meder by Dr. Tiina Meder",
       "title": "Meder Beauty Science Protocols (Switzerland)",
       "summary": "Swiss dermatological neuro-cosmeceuticals delivering clinical injection-grade results non-invasively: Hydra-Fill, Lipo-Oval, Arma-Lift, and Red-Apax.",
       "benefits": [
@@ -2290,7 +2289,7 @@ const procedureDescriptions = {
       ]
     },
     "lv": {
-      "category": "Vaksācija",
+      "category": "Depilācija ar vasku",
       "title": "Bikini dziļais (plēves vasks)",
       "summary": "Dziļās bikini zonas depilācija ar augstākās kvalitātes plēves vasku. Saudzīga pieeja un ilgstošs gludums.",
       "benefits": [
@@ -2651,7 +2650,7 @@ const procedureDescriptions = {
       ]
     },
     "en": {
-      "category": "Apparative & Meder",
+      "category": "Device Cosmetology",
       "title": "RF Facial Lifting + Vacuum Boots",
       "summary": "Synergistic radiofrequency thermal skin remodeling combined with Zemits pneumatic lymphatic boots. Restores jawline definition and tightens facial tissue while flushing toxins from the legs.",
       "benefits": [
@@ -2675,7 +2674,7 @@ const procedureDescriptions = {
   },
   "meder.2": {
     "ru": {
-      "category": "Аппаратная & Meder",
+      "category": "Meder by Dr. Tiina Meder",
       "title": "Протокол Meder + микротоки",
       "summary": "Индивидуальный швейцарский протокол Meder Beauty Science, усиленный аппаратной микротоковой терапией. Микротоки улучшают проникновение биотехнологических пептидов в глубокие слои дермы и тонизируют лицевые мышцы.",
       "benefits": [
@@ -2698,9 +2697,9 @@ const procedureDescriptions = {
       ]
     },
     "lv": {
-      "category": "Aparātu & Meder",
-      "title": "Standarta Meder protokols + mikrotoki",
-      "summary": "Meder Beauty Science Šveices dermatoloģiskais protokols apvienojumā ar mikrotoku terapiju dziļai muskuļu stimulācijai un aktīvo vielu ievadīšanai.",
+      "category": "Meder by Dr. Tiina Meder",
+      "title": "Standarta Meder protokols + mikro strāvu terapija",
+      "summary": "Meder Beauty Science Šveices dermatoloģiskais protokols apvienojumā ar mikro strāvu terapiju dziļai muskuļu stimulācijai un aktīvo vielu ievadīšanai.",
       "benefits": [
         "Pastiprināta peptīdu un vitamīnu uzsūkšanās",
         "Muskuļu tonusa atjaunošana un mikrocirkulācija",
@@ -2710,7 +2709,7 @@ const procedureDescriptions = {
       "steps": [
         "Meder sejas sagatavošana un pīlings",
         "Mērķa serums un aktīvais koncentrāts",
-        "Mikrostrāvu terapijas posms",
+        "Mikro strāvu terapijas posms",
         "Meder specializētā hidrogēla/šķiedru maska",
         "Noslēguma kopšana"
       ],
@@ -2721,7 +2720,7 @@ const procedureDescriptions = {
       ]
     },
     "en": {
-      "category": "Apparative & Meder",
+      "category": "Meder by Dr. Tiina Meder",
       "title": "Standard Meder Protocol + Microcurrents",
       "summary": "Award-winning Swiss Meder Beauty Science protocol amplified by bio-cellular microcurrent technology to deeply tone facial musculature and enhance bio-peptide absorption.",
       "benefits": [
@@ -3020,8 +3019,8 @@ const procedureDescriptions = {
     },
     "lv": {
       "category": "Ķermeņa modelēšana",
-      "title": "Lipozero + mikrostrāvu terapija sejai + limfodrenāžas zābaki",
-      "summary": "Kombinēta procedūra, kas apvieno ķermeņa konturēšanu ar LipoZero, mikrostrāvu liftingu sejas ovālam un limfodrenāžas zābakus vieglumam kājās.",
+      "title": "Lipozero + mikro strāvu terapija sejai + limfodrenāžas zābaki",
+      "summary": "Kombinēta procedūra, kas apvieno ķermeņa konturēšanu ar LipoZero, mikro strāvu liftingu sejas ovālam un limfodrenāžas zābakus vieglumam kājās.",
       "benefits": [
         "Ātra un efektīva sejas un auguma uzlabošana",
         "Tauku šūnu samazināšana un ādas savilkšana",
@@ -3030,7 +3029,7 @@ const procedureDescriptions = {
       "steps": [
         "Presoterapijas zābaku uzstādīšana",
         "LipoZero ķermeņa zonas apstrāde",
-        "Sejas mikrotoku terapija",
+        "Sejas mikro strāvu terapija",
         "Noslēguma kopšana"
       ],
       "suitableFor": [

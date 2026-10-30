@@ -27,10 +27,7 @@
 <!-- ===== NAVIGATION ===== -->
 <nav class="navbar" id="navbar">
   <div class="container">
-    <a href="#" class="nav-logo">
-      SOVA
-      <span class="nav-logo-sub">Skincare</span>
-    </a>
+    <a href="#hero" class="nav-logo" aria-label="SOVA SKINCARE"><img class="brand-logo" src="images/sova-logo.svg" alt="SOVA SKINCARE" width="138" height="59"></a>
     <!-- Backdrop for mobile menu -->
     <div class="nav-backdrop" id="navBackdrop"></div>
 
@@ -43,7 +40,7 @@
 
       <a href="#services" data-i18n="nav.services">Services</a>
       <a href="#price" data-i18n="nav.price">Price List</a>
-      <a href="#giftcards" data-i18n="nav.giftcards">Gift Cards</a>
+      <a href="#shop" data-i18n="nav.shop">Shop</a>
       <a href="#about" data-i18n="nav.about">About</a>
       <a href="#testimonials" data-i18n="nav.reviews">Reviews</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
@@ -57,7 +54,7 @@
         <button class="lang-btn" data-lang="ru">RU</button>
         <button class="lang-btn" data-lang="lv">LV</button>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -67,7 +64,8 @@
 <!-- ===== HERO ===== -->
 <section class="hero" id="hero">
   <div class="hero-bg">
-    <img src="images/hero-bg.webp" alt="SOVA SKINCARE clinic interior" loading="eager">
+    <img src="images/hero-poster.webp" alt="SOVA SKINCARE studio in Riga" loading="eager" fetchpriority="high" width="540" height="960">
+    <video id="heroVideo" class="hero-video" muted playsinline loop preload="none" poster="images/hero-poster.webp" aria-hidden="true" data-mobile-src="media/hero-mobile.mp4" data-desktop-src="media/hero-desktop.mp4"></video>
   </div>
   <div class="hero-overlay"></div>
   <div class="container">
@@ -89,11 +87,24 @@
       </div>
     </div>
   </div>
+  <button class="hero-video-toggle" id="heroVideoToggle" type="button" aria-controls="heroVideo">
+    <svg class="video-pause-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M7 5h3v14H7zm7 0h3v14h-3z"/></svg>
+    <svg class="video-play-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="m8 4 12 8-12 8z"/></svg>
+    <span data-i18n="hero.video.play">Play video</span>
+  </button>
   <div class="hero-scroll">
     <span data-i18n="hero.scroll">Scroll</span>
     <div class="scroll-line"></div>
   </div>
 </section>
+
+<!-- ===== SHOP OPENING ANNOUNCEMENT ===== -->
+<aside class="shop-announcement" aria-label="Online shop">
+  <a href="#shop" class="container shop-announcement-link">
+    <span class="shop-announcement-text" data-i18n="shop.announcement">Our online shop is opening soon</span>
+    <span class="shop-announcement-action"><span data-i18n="shop.discover">Discover the brands</span><span aria-hidden="true">↗</span></span>
+  </a>
+</aside>
 
 <!-- ===== SERVICES ===== -->
 <section class="services" id="services">
@@ -189,7 +200,8 @@
       <button class="price-tab" data-target="cat-massages" data-i18n="price.tab.massages">Facial Massages</button>
       <button class="price-tab" data-target="cat-peels" data-i18n="price.tab.peels">Peels</button>
       <button class="price-tab" data-target="cat-wow" data-i18n="price.tab.wow">WOW Effect</button>
-      <button class="price-tab" data-target="cat-apparative" data-i18n="price.tab.apparative">Apparative &amp; Meder</button>
+      <button class="price-tab" data-target="cat-apparative" data-i18n="price.tab.apparative">Device Cosmetology</button>
+      <button class="price-tab" data-target="cat-meder" data-i18n="price.tab.meder">Meder by Dr. Tiina Meder</button>
       <button class="price-tab" data-target="cat-injections" data-i18n="price.tab.injections">Injectables</button>
       <button class="price-tab" data-target="cat-bodymassage" data-i18n="price.tab.bodymassage">Body &amp; Lipozero</button>
       <button class="price-tab" data-target="cat-waxing" data-i18n="price.tab.waxing">Waxing</button>
@@ -525,17 +537,17 @@
         </div>
       </div>
 
-      <!-- Category: Apparative & Meder -->
+      <!-- Category: Device Cosmetology -->
       <div class="price-accordion-card reveal" id="cat-apparative" data-category="apparative">
         <button class="price-card-header" aria-expanded="false">
           <div class="price-card-title-group">
             <div class="price-slide-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
             </div>
-            <h3 class="price-category-title"><span data-i18n="price.tab.apparative">Apparative &amp; Meder</span></h3>
+            <h3 class="price-category-title"><span data-i18n="price.tab.apparative">Device Cosmetology</span></h3>
           </div>
           <div class="price-card-header-right">
-            <span class="price-count-badge">8</span>
+            <span class="price-count-badge">6</span>
             <span class="price-chevron">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
             </span>
@@ -599,6 +611,28 @@
                 <span class="price-val">510 €</span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category: Meder by Dr. Tiina Meder -->
+      <div class="price-accordion-card reveal" id="cat-meder" data-category="meder">
+        <button class="price-card-header" aria-expanded="false">
+          <div class="price-card-title-group">
+            <div class="price-slide-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </div>
+            <h3 class="price-category-title"><span data-i18n="price.tab.meder">Meder by Dr. Tiina Meder</span></h3>
+          </div>
+          <div class="price-card-header-right">
+            <span class="price-count-badge">2</span>
+            <span class="price-chevron">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+          </div>
+        </button>
+        <div class="price-card-body">
+          <div class="price-items">
             <div class="price-item">
               <span class="price-name" data-i18n="price.meder.1">Meder Protocol (Hydra Fill / Lipo Oval / Arma Lift etc.)</span>
               <button class="price-info-btn" type="button" aria-label="Procedure Info" data-procedure="meder.1" title="Info">
@@ -1063,154 +1097,27 @@
   </div>
 </section>
 
-<!-- ===== GIFT CARDS & VOUCHERS SECTION ===== -->
-<section class="giftcards-section" id="giftcards">
+<!-- ===== ONLINE SHOP · COMING SOON ===== -->
+<section class="shop-section" id="shop" aria-labelledby="shopTitle">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label" data-i18n="giftcards.label">Exclusive Gift</span>
-      <h2 class="section-title" data-i18n="giftcards.title">Give the Gift of Radiant Beauty</h2>
-      <p class="section-subtitle" data-i18n="giftcards.subtitle">
-        An exquisite digital gift certificate for any amount or chosen clinical treatment. The perfect gift with instant generation and a personal greeting.
-      </p>
-    </div>
-
-    <!-- Saved Certificate Notification Banner (if returning user has a voucher) -->
-    <div id="gcSavedBanner" class="gc-saved-banner" style="display: none;">
-      <div class="gc-saved-banner-content">
-        <div class="gc-saved-banner-icon">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-        </div>
-        <div class="gc-saved-banner-info">
-          <span class="gc-saved-banner-lbl" data-i18n="giftcards.saved_title">У вас есть сохранённый подарочный сертификат:</span>
-          <strong id="gcSavedBannerCode">SOVA-XXXX-YYYY</strong> (<span id="gcSavedBannerAmount">100 €</span>)
-        </div>
-        <div class="gc-saved-banner-actions">
-          <button type="button" class="btn btn-primary btn-sm" id="gcOpenSavedBtn" data-i18n="giftcards.btn_open_saved">Открыть и скачать PDF</button>
-          <button type="button" class="gc-saved-dismiss" id="gcDismissSavedBtn" aria-label="Close">&times;</button>
-        </div>
+    <div class="shop-intro reveal">
+      <div>
+        <span class="section-label" data-i18n="shop.label">SOVA selection</span>
+        <h2 class="section-title" id="shopTitle" data-i18n="shop.title">Online shop.<br><em>Coming soon.</em></h2>
+      </div>
+      <div class="shop-copy">
+        <span class="shop-status"><span aria-hidden="true"></span><span data-i18n="shop.status">Professional skincare, soon online</span></span>
+        <p data-i18n="shop.description">The professional skincare brands we offer at SOVA will soon be available in our online shop. Until then, our team can help you choose your home care at the studio.</p>
+        <a class="shop-link" href="#contact"><span data-i18n="shop.contact">Ask about skincare</span><span aria-hidden="true">↗</span></a>
       </div>
     </div>
-
-    <div class="gc-grid">
-      <!-- Left: Interactive Customizer Panel -->
-      <div class="gc-designer-panel reveal">
-        <!-- Amount Selector -->
-        <div class="gc-form-group" id="gcAmountGroup">
-          <label class="gc-label" data-i18n="giftcards.tab_amount">Номинал сертификата (€)</label>
-          <div class="gc-chips">
-            <button type="button" class="gc-chip-btn" data-amount="50">50 €</button>
-            <button type="button" class="gc-chip-btn active gc-chip-popular" data-amount="100">100 €</button>
-            <button type="button" class="gc-chip-btn" data-amount="150">150 €</button>
-            <button type="button" class="gc-chip-btn" data-amount="200">200 €</button>
-            <button type="button" class="gc-chip-btn" data-amount="custom" data-i18n="giftcards.custom_amount">Своя сумма (€)</button>
-          </div>
-          <input type="number" id="gcCustomAmountInput" class="gc-input" style="display: none; margin-top: 10px;" min="20" max="1000" step="5" placeholder="Введите сумму в € (мин. 20 €)">
-        </div>
-
-        <!-- Personalization Inputs -->
-        <div class="gc-form-group">
-          <label class="gc-label" for="gcToName" data-i18n="giftcards.field_to">Recipient Name</label>
-          <input type="text" id="gcToName" class="gc-input" placeholder="e.g., Anna" data-i18n-ph="giftcards.field_to_ph" maxlength="40">
-        </div>
-
-        <div class="gc-form-group">
-          <label class="gc-label" for="gcFromName" data-i18n="giftcards.field_from">From (Your Name)</label>
-          <input type="text" id="gcFromName" class="gc-input" placeholder="e.g., Maxim" data-i18n-ph="giftcards.field_from_ph" maxlength="40">
-        </div>
-
-        <div class="gc-form-group">
-          <label class="gc-label" for="gcMessage" data-i18n="giftcards.field_msg">Personal Message</label>
-          <textarea id="gcMessage" class="gc-textarea" rows="2" placeholder="Write your warm congratulations or wishes..." data-i18n-ph="giftcards.field_msg_ph" maxlength="200"></textarea>
-        </div>
-
-        <div class="gc-form-group">
-          <label class="gc-label" for="gcEmail" data-i18n="giftcards.field_email">Your Email (for receipt & voucher)</label>
-          <input type="email" id="gcEmail" class="gc-input" placeholder="name@example.com" data-i18n-ph="giftcards.field_email_ph">
-        </div>
-
-        <!-- Theme Selector -->
-        <div class="gc-form-group">
-          <label class="gc-label" data-i18n="giftcards.theme_label">Certificate Theme</label>
-          <div class="gc-theme-swatches">
-            <button type="button" class="gc-theme-btn active" data-theme="obsidian">
-              <span class="gc-swatch-circle gc-swatch-obsidian"></span>
-              <span data-i18n="giftcards.theme_obsidian">Obsidian Gold</span>
-            </button>
-            <button type="button" class="gc-theme-btn" data-theme="champagne">
-              <span class="gc-swatch-circle gc-swatch-champagne"></span>
-              <span data-i18n="giftcards.theme_champagne">Champagne Silk</span>
-            </button>
-            <button type="button" class="gc-theme-btn" data-theme="emerald">
-              <span class="gc-swatch-circle gc-swatch-emerald"></span>
-              <span data-i18n="giftcards.theme_emerald">Sage Botanical</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Test Mode Notice -->
-        <div class="gc-test-banner">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31M14 2v7.31M8.5 2h7M14 9.3a6.5 6.5 0 1 1-4 0"/></svg>
-          <span data-i18n="giftcards.test_badge">🧪 Test Mode: 0.00 € (100% discount for demonstration)</span>
-        </div>
-
-        <!-- Order Total & Submit -->
-        <div class="gc-order-summary">
-          <span class="gc-summary-label" data-i18n="giftcards.order_total">Total</span>
-          <div class="gc-summary-price" id="gcOrderPrice">
-            <span class="gc-price-original">100 €</span>
-            <span class="gc-price-test">0.00 €</span>
-          </div>
-        </div>
-
-        <button type="button" id="gcBuyBtn" class="btn btn-primary gc-buy-btn">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-          <span id="gcBuyBtnText" data-i18n="giftcards.btn_buy">Issue Gift Certificate (0.00 €)</span>
-        </button>
-      </div>
-
-      <!-- Right: Live 3D Luxury Preview Card -->
-      <div class="gc-preview-col reveal">
-        <div class="gc-card-container">
-          <div class="gc-card gc-theme-obsidian" id="gcPreviewCard">
-            <div class="gc-card-header">
-              <div class="gc-card-brand">
-                <span class="gc-card-brand-title">SOVA</span>
-                <span class="gc-card-brand-sub">SKINCARE · RĪGA</span>
-              </div>
-              <div class="gc-card-seal" title="SOVA Exclusive">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-              </div>
-            </div>
-
-            <div class="gc-card-middle">
-              <div class="gc-card-value" id="gcCardValue">100 €</div>
-              <div class="gc-card-subtitle" id="gcCardSubtitle">GIFT VOUCHER · SOVA SKINCARE</div>
-              <div class="gc-card-msg-box" id="gcCardMsg">«Wishing you radiant beauty, peaceful relaxation, and joyful moments at SOVA SKINCARE!»</div>
-            </div>
-
-            <div class="gc-card-footer">
-              <div class="gc-card-persons">
-                <div class="gc-card-person-block">
-                  <span class="gc-card-person-lbl" data-i18n="giftcards.card_for">FOR</span>
-                  <span class="gc-card-person-val" id="gcCardTo">Anna</span>
-                </div>
-                <div class="gc-card-person-block">
-                  <span class="gc-card-person-lbl" data-i18n="giftcards.card_from">FROM</span>
-                  <span class="gc-card-person-val" id="gcCardFrom">Maxim</span>
-                </div>
-              </div>
-              <div class="gc-card-serial">SOVA-PREVIEW</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Staff / Admin Scanner Trigger Link -->
-        <button type="button" class="gc-scanner-trigger-btn open-gc-scanner-trigger">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
-          <span data-i18n="giftcards.staff_scanner">Scan &amp; Verify Certificates (Staff / Admin)</span>
-        </button>
-      </div>
-    </div>
+    <ul class="shop-brands reveal" aria-label="Skincare brands">
+      <li class="brand-lira">LIRA <span>CLINICAL</span></li>
+      <li class="brand-medik">Medik<span>8</span></li>
+      <li class="brand-noon">NOON <span>AESTHETICS</span></li>
+      <li class="brand-genosys">Genosys</li>
+      <li class="brand-meder">Meder <span>beauty Science</span></li>
+    </ul>
   </div>
 </section>
 
@@ -1510,17 +1417,14 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="nav-logo">
-          SOVA
-          <span class="nav-logo-sub">Skincare</span>
-        </a>
+        <a href="#hero" class="nav-logo" aria-label="SOVA SKINCARE"><img class="brand-logo" src="images/sova-logo.svg" alt="SOVA SKINCARE" width="138" height="59"></a>
         <p data-i18n="footer.brand">Premium cosmetology & body modeling studio in the heart of Riga. Your journey to radiant skin starts here.</p>
       </div>
       <div class="footer-col">
         <h4 data-i18n="footer.nav">Navigate</h4>
         <a href="#services" data-i18n="nav.services">Services</a>
         <a href="#price" data-i18n="nav.price">Price List</a>
-        <a href="#giftcards" data-i18n="nav.giftcards">Gift Cards</a>
+        <a href="#shop" data-i18n="nav.shop">Shop</a>
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#testimonials" data-i18n="nav.reviews">Reviews</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
@@ -1599,178 +1503,9 @@
   </div>
 </div>
 
-<!-- Issued Gift Card Success Modal -->
-<div class="procedure-modal-overlay" id="giftCardSuccessModal" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="procedure-modal-backdrop" id="gcSuccessBackdrop"></div>
-  <div class="procedure-modal-container gc-success-dialog">
-    <div class="procedure-modal">
-      <button class="procedure-modal-close" id="gcSuccessCloseBtn" type="button" aria-label="Close dialog">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      </button>
-
-      <div class="gc-success-header">
-        <div class="gc-success-icon">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <h3 class="procedure-modal-title" style="padding-right: 0;" data-i18n="giftcards.modal_title">Certificate Successfully Issued!</h3>
-        <p class="procedure-modal-summary" style="margin-top: 6px;" data-i18n="giftcards.modal_sub">Your official digital gift card has been created with an encrypted security code and instant verification QR code.</p>
-      </div>
-
-      <div class="procedure-modal-body" style="padding-top: 0;">
-        <!-- Digital Card Visual -->
-        <div class="gc-card-container">
-          <div class="gc-card" id="gcSuccessCard">
-            <div class="gc-card-header">
-              <div class="gc-card-brand">
-                <span class="gc-card-brand-title">SOVA</span>
-                <span class="gc-card-brand-sub">SKINCARE · RĪGA</span>
-              </div>
-              <div class="gc-card-seal">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-              </div>
-            </div>
-            <div class="gc-card-middle">
-              <div class="gc-card-value" id="gcSuccessValue">100 €</div>
-              <div class="gc-card-subtitle" id="gcSuccessSub">SOVA SKINCARE GIFT VOUCHER</div>
-              <div class="gc-card-msg-box" id="gcSuccessMsg"></div>
-            </div>
-            <div class="gc-card-footer">
-              <div class="gc-card-persons">
-                <div class="gc-card-person-block">
-                  <span class="gc-card-person-lbl" data-i18n="giftcards.card_for">FOR</span>
-                  <span class="gc-card-person-val" id="gcSuccessTo">Anna</span>
-                </div>
-                <div class="gc-card-person-block">
-                  <span class="gc-card-person-lbl" data-i18n="giftcards.card_from">FROM</span>
-                  <span class="gc-card-person-val" id="gcSuccessFrom">Maxim</span>
-                </div>
-              </div>
-              <div class="gc-card-serial" id="gcSuccessCode">SOVA-XXXX-YYYY</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Voucher Details & QR -->
-        <div class="gc-voucher-sheet">
-          <div class="gc-voucher-row">
-            <div class="gc-voucher-info">
-              <span class="gc-voucher-code-lbl" data-i18n="giftcards.card_code_label">SECURITY CODE</span>
-              <div class="gc-voucher-code-val" id="gcSuccessCodeDisplay"></div>
-              <div class="gc-voucher-expiry">
-                <span data-i18n="giftcards.valid_until">Valid until</span>: <strong id="gcSuccessExpiry"></strong>
-              </div>
-              <div class="gc-voucher-address">
-                📍 Tallinas iela 95, Rīga · dikidi.net/1447376 · @sova_skincare
-              </div>
-            </div>
-            <div class="gc-qr-box" id="gcSuccessQr"></div>
-          </div>
-        </div>
-
-        <!-- Delivery Status & Security Notice -->
-        <div class="gc-delivery-status" id="gcDeliveryStatus">
-          <div class="gc-delivery-icon">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div class="gc-delivery-text">
-            <div><span data-i18n="giftcards.email_sent_to">Сертификат оформлен на email:</span> <strong id="gcSuccessEmailDisplay"></strong></div>
-            <div class="gc-delivery-sub" data-i18n="giftcards.auto_download_notice">Файл PDF автоматически скачан на ваше устройство. Вы также можете отправить копию на почту или скачать повторно.</div>
-          </div>
-        </div>
-
-        <!-- Action Buttons -->
-        <div class="gc-success-actions">
-          <button type="button" class="btn btn-primary gc-btn-full" id="gcDownloadPdfBtn">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span data-i18n="giftcards.btn_download_pdf">Скачать PDF</span>
-          </button>
-          <a id="gcSendEmailBtn" class="btn btn-outline gc-btn-full" target="_blank">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span data-i18n="giftcards.btn_email_copy">Отправить на Email</span>
-          </a>
-          <div class="gc-success-actions-row">
-            <button type="button" class="btn btn-outline gc-btn-half" id="gcCopyBtn">
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              <span data-i18n="giftcards.btn_copy">Скопировать код</span>
-            </button>
-            <button type="button" class="btn btn-outline gc-btn-half" id="gcTestInScannerBtn">
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
-              <span data-i18n="giftcards.btn_verify">Проверить в сканере</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Staff Scanner & Verification Modal -->
-<div class="procedure-modal-overlay" id="giftCardScannerModal" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="procedure-modal-backdrop" id="gcScannerBackdrop"></div>
-  <div class="procedure-modal-container gc-scanner-dialog">
-    <div class="procedure-modal">
-      <button class="procedure-modal-close" id="gcScannerCloseBtn" type="button" aria-label="Close dialog">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      </button>
-
-      <div class="procedure-modal-header">
-        <span class="procedure-modal-badge" style="background: rgba(27, 94, 32, 0.12); color: #1B5E20;">STAFF / ADMIN PORTAL</span>
-        <h3 class="procedure-modal-title" data-i18n="giftcards.scanner_title">Certificate Scanner &amp; Validator</h3>
-      </div>
-
-      <div class="procedure-modal-body">
-        <!-- Scanner Tabs -->
-        <div class="gc-scanner-tabs">
-          <button type="button" class="gc-scanner-tab active" id="gcTabCamera" data-i18n="giftcards.tab_camera">Camera (QR Scanner)</button>
-          <button type="button" class="gc-scanner-tab" id="gcTabManual" data-i18n="giftcards.tab_manual">Manual Code Entry</button>
-        </div>
-
-        <!-- Camera View -->
-        <div id="gcViewCamera">
-          <div class="gc-camera-wrapper">
-            <video id="gcScannerVideo" class="gc-camera-video" playsinline></video>
-            <div class="gc-reticle"></div>
-          </div>
-          <p id="gcCameraError" style="display: none; color: #B71C1C; font-size: 0.85rem; margin-top: 8px; text-align: center;"></p>
-          <p style="font-size: 0.82rem; color: #7A6956; text-align: center; margin-top: 10px;" data-i18n="giftcards.scanner_prompt">Point camera at the QR code on the certificate</p>
-        </div>
-
-        <!-- Manual Input View -->
-        <div id="gcViewManual" style="display: none;">
-          <form id="gcManualForm" class="gc-manual-form">
-            <input type="text" id="gcManualCodeInput" class="gc-input gc-code-input" placeholder="SOVA-XXXX-YYYY-ZZ" maxlength="25">
-            <button type="submit" class="btn btn-primary" style="padding: 0 20px; white-space: nowrap;" data-i18n="giftcards.btn_check">Check</button>
-          </form>
-          <!-- Quick test shortcuts for salon testing -->
-          <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
-            <span style="font-size: 0.78rem; color: #8C7E72; align-self: center;">Test samples:</span>
-            <button type="button" id="gcSampleDemoBtn" style="font-size: 0.75rem; background: #EFE9E0; border: none; padding: 4px 10px; border-radius: 12px; cursor: pointer;">Active (100 €)</button>
-            <button type="button" id="gcSampleUsedBtn" style="font-size: 0.75rem; background: #EFE9E0; border: none; padding: 4px 10px; border-radius: 12px; cursor: pointer;">Used (80 €)</button>
-          </div>
-        </div>
-
-        <!-- Validation Results Card -->
-        <div id="gcScanResult" class="gc-scan-result-card" style="display: none;">
-          <div id="gcResultBadge" class="gc-status-badge"></div>
-          <h4 id="gcResultTitle" style="font-family: var(--font-heading); font-size: 1.35rem; margin: 4px 0 10px 0; color: var(--charcoal);"></h4>
-          <div id="gcResultDetails"></div>
-          <button type="button" id="gcRedeemBtn" class="gc-redeem-btn" style="display: none;" data-i18n="giftcards.btn_redeem">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Redeem Certificate Now</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <script src="translations.js"></script>
 <script src="procedure-descriptions.js"></script>
-<script src="qrcode.min.js"></script>
-<script src="jsqr.min.js"></script>
-<script src="jspdf.umd.min.js"></script>
-<script src="html2canvas.min.js"></script>
-<script src="giftcards.js"></script>
 <script src="script.js"></script>
+<script src="hero-video.js"></script>
 </body>
 </html>
