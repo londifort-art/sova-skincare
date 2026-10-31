@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="SOVA SKINCARE — Elevate Your Natural Beauty">
   <meta name="twitter:description" content="Advanced aesthetic treatments by medical professionals in the heart of Riga.">
   <meta name="twitter:image" content="https://sova-skincare.onrender.com/images/hero-bg.webp">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=mobile-20261031">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>🦉</text></svg>">
 </head>
 <body>
@@ -27,7 +27,7 @@
 <!-- ===== NAVIGATION ===== -->
 <nav class="navbar" id="navbar">
   <div class="container">
-    <a href="#hero" class="nav-logo" aria-label="SOVA SKINCARE"><img class="brand-logo" src="images/sova-logo.svg" alt="SOVA SKINCARE" width="138" height="59"></a>
+    <a href="#hero" class="nav-logo" aria-label="SOVA SKINCARE"><svg class="brand-logo" viewBox="0 0 920 390" aria-hidden="true" focusable="false"><use href="images/sova-logo.svg?v=vector-2#sova-mark"></use></svg></a>
     <!-- Backdrop for mobile menu -->
     <div class="nav-backdrop" id="navBackdrop"></div>
 
@@ -65,7 +65,10 @@
 <section class="hero" id="hero">
   <div class="hero-bg">
     <img src="images/hero-poster.webp" alt="SOVA SKINCARE studio in Riga" loading="eager" fetchpriority="high" width="540" height="960">
-    <video id="heroVideo" class="hero-video" muted playsinline loop preload="none" poster="images/hero-poster.webp" aria-hidden="true" data-mobile-src="media/hero-mobile.mp4" data-desktop-src="media/hero-desktop.mp4"></video>
+    <video id="heroVideo" class="hero-video" autoplay muted playsinline webkit-playsinline loop preload="metadata" poster="images/hero-poster.webp" aria-hidden="true">
+      <source src="media/hero-mobile-v2.mp4" media="(max-width: 768px)" type="video/mp4">
+      <source src="media/hero-desktop.mp4" type="video/mp4">
+    </video>
   </div>
   <div class="hero-overlay"></div>
   <div class="container">
@@ -118,7 +121,7 @@
       <!-- Card 1: Facial -->
       <div class="service-card reveal reveal-delay-1 facial">
         <div class="service-card-img">
-          <img src="images/facial.webp" alt="Facial treatments" loading="lazy">
+          <img src="images/facial-studio-1200.webp" srcset="images/facial-studio-640.webp 640w, images/facial-studio-1200.webp 1200w" sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 1100px) calc((100vw - 68px) / 2), 380px" alt="SOVA SKINCARE professional skincare collection" loading="lazy" decoding="async" width="1200" height="1600">
         </div>
         <div class="service-card-overlay"></div>
         <div class="service-card-content">
@@ -138,7 +141,7 @@
       <!-- Card 2: Injectables -->
       <div class="service-card reveal reveal-delay-2 injectables">
         <div class="service-card-img">
-          <img src="images/injectables.webp" alt="Injectable treatments" loading="lazy">
+          <img src="images/injectables-studio-1200.webp" srcset="images/injectables-studio-640.webp 640w, images/injectables-studio-1200.webp 1200w" sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 1100px) calc((100vw - 68px) / 2), 380px" alt="Preparation for an injectable treatment at SOVA SKINCARE" loading="lazy" decoding="async" width="1200" height="1600">
         </div>
         <div class="service-card-overlay"></div>
         <div class="service-card-content">
@@ -158,7 +161,7 @@
       <!-- Card 3: Body -->
       <div class="service-card reveal reveal-delay-3 body">
         <div class="service-card-img">
-          <img src="images/body.webp" alt="Body modeling" loading="lazy">
+          <img src="images/lipozero-studio-1200.webp" srcset="images/lipozero-studio-640.webp 640w, images/lipozero-studio-1200.webp 1200w" sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 1100px) calc((100vw - 68px) / 2), 380px" alt="Lipozero body contouring device at SOVA SKINCARE" loading="lazy" decoding="async" width="1200" height="1600">
         </div>
         <div class="service-card-overlay"></div>
         <div class="service-card-content">
@@ -875,55 +878,39 @@
               <span class="price-dots"></span>
               <div class="price-val-group"><span class="price-val">125 €</span></div>
             </div>
-            <div class="price-item highlight-item">
-              <div class="price-name-col">
-                <div class="price-name-row">
-                  <span class="price-name" data-i18n="price.bmsg.pkg_start">START (4x Lipozero)</span>
-                  <button class="price-info-btn" type="button" aria-label="Procedure Info" data-procedure="bmsg.pkg_start" title="Info">
+            <div class="price-item highlight-item price-package">
+              <span class="price-name" data-i18n="price.bmsg.pkg_start">START (4x Lipozero)</span>
+              <span class="price-desc-sub" data-i18n="price.bmsg.pkg_start_desc">Safe &amp; verified start, first visible results</span>
+              <button class="price-info-btn" type="button" aria-label="Procedure Info" data-procedure="bmsg.pkg_start" title="Info">
                     <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
                   </button>
-                </div>
-                <span class="price-desc-sub" data-i18n="price.bmsg.pkg_start_desc">Safe &amp; verified start, first visible results</span>
-              </div>
               <span class="price-dots"></span>
               <div class="price-val-group"><span class="price-val">220 €</span></div>
             </div>
-            <div class="price-item highlight-item">
-              <div class="price-name-col">
-                <div class="price-name-row">
-                  <span class="price-name" data-i18n="price.bmsg.pkg_startplus">START+ (4x Lipozero + 2x Vacuum Boots)</span>
-                  <button class="price-info-btn" type="button" aria-label="Procedure Info" data-procedure="bmsg.pkg_startplus" title="Info">
+            <div class="price-item highlight-item price-package">
+              <span class="price-name" data-i18n="price.bmsg.pkg_startplus">START+ (4x Lipozero + 2x Vacuum Boots)</span>
+              <span class="price-desc-sub" data-i18n="price.bmsg.pkg_startplus_desc">Enhanced lymphatic drainage, faster circumference reduction</span>
+              <button class="price-info-btn" type="button" aria-label="Procedure Info" data-procedure="bmsg.pkg_startplus" title="Info">
                     <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
                   </button>
-                </div>
-                <span class="price-desc-sub" data-i18n="price.bmsg.pkg_startplus_desc">Enhanced lymphatic drainage, faster circumference reduction</span>
-              </div>
               <span class="price-dots"></span>
               <div class="price-val-group"><span class="price-val">260 €</span></div>
             </div>
-            <div class="price-item highlight-item">
-              <div class="price-name-col">
-                <div class="price-name-row">
-                  <span class="price-name" data-i18n="price.bmsg.pkg_balance">BODY BALANCE (8x Lipozero + 4x Vacuum Boots)</span>
-                  <button class="price-info-btn" type="button" aria-label="Procedure Info" data-procedure="bmsg.pkg_balance" title="Info">
+            <div class="price-item highlight-item price-package">
+              <span class="price-name" data-i18n="price.bmsg.pkg_balance">BODY BALANCE (8x Lipozero + 4x Vacuum Boots)</span>
+              <span class="price-desc-sub" data-i18n="price.bmsg.pkg_balance_desc">Comprehensive body contouring, visible natural results</span>
+              <button class="price-info-btn" type="button" aria-label="Procedure Info" data-procedure="bmsg.pkg_balance" title="Info">
                     <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
                   </button>
-                </div>
-                <span class="price-desc-sub" data-i18n="price.bmsg.pkg_balance_desc">Comprehensive body contouring, visible natural results</span>
-              </div>
               <span class="price-dots"></span>
               <div class="price-val-group"><span class="price-val">500 €</span></div>
             </div>
-            <div class="price-item highlight-item">
-              <div class="price-name-col">
-                <div class="price-name-row">
-                  <span class="price-name" data-i18n="price.bmsg.pkg_complete">COMPLETE (10x Lipozero)</span>
-                  <button class="price-info-btn" type="button" aria-label="Procedure Info" data-procedure="bmsg.pkg_complete" title="Info">
+            <div class="price-item highlight-item price-package">
+              <span class="price-name" data-i18n="price.bmsg.pkg_complete">COMPLETE (10x Lipozero)</span>
+              <span class="price-desc-sub" data-i18n="price.bmsg.pkg_complete_desc">Maximum full-course effect, sustained toning and sculpting</span>
+              <button class="price-info-btn" type="button" aria-label="Procedure Info" data-procedure="bmsg.pkg_complete" title="Info">
                     <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
                   </button>
-                </div>
-                <span class="price-desc-sub" data-i18n="price.bmsg.pkg_complete_desc">Maximum full-course effect, sustained toning and sculpting</span>
-              </div>
               <span class="price-dots"></span>
               <div class="price-val-group"><span class="price-val">520 €</span></div>
             </div>
@@ -1417,7 +1404,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#hero" class="nav-logo" aria-label="SOVA SKINCARE"><img class="brand-logo" src="images/sova-logo.svg" alt="SOVA SKINCARE" width="138" height="59"></a>
+        <a href="#hero" class="nav-logo" aria-label="SOVA SKINCARE"><svg class="brand-logo" viewBox="0 0 920 390" aria-hidden="true" focusable="false"><use href="images/sova-logo.svg?v=vector-2#sova-mark"></use></svg></a>
         <p data-i18n="footer.brand">Premium cosmetology & body modeling studio in the heart of Riga. Your journey to radiant skin starts here.</p>
       </div>
       <div class="footer-col">
@@ -1505,7 +1492,7 @@
 
 <script src="translations.js"></script>
 <script src="procedure-descriptions.js"></script>
-<script src="script.js"></script>
-<script src="hero-video.js"></script>
+<script src="script.js?v=mobile-2"></script>
+<script src="hero-video.js?v=mobile-2"></script>
 </body>
 </html>

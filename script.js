@@ -355,3 +355,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // Keep the mobile navigation usable with a keyboard and after rotation.
 document.addEventListener('keydown', event => { if (event.key === 'Escape' && navLinks.classList.contains('active')) { closeMobileMenu(); navToggle.focus(); } });
 window.matchMedia('(min-width: 1101px)').addEventListener('change', event => { if (event.matches) closeMobileMenu(); });
+
+// Keep the floating booking control from covering price names and package descriptions.
+const floatingBookingButton = document.querySelector('.mobile-fab');
+const pricingSection = document.getElementById('price');
+if (floatingBookingButton && pricingSection) {
+  new IntersectionObserver(entries => {
+    floatingBookingButton.classList.toggle('is-hidden-for-prices', entries[0].isIntersecting);
+  }).observe(pricingSection);
+}

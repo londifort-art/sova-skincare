@@ -1158,6 +1158,18 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
 }
 .price-item:hover::before { opacity: 1; }
 
+.price-package {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 32px auto;
+  grid-template-areas: "name info price" "description description price";
+  gap: 6px 12px;
+}
+.price-package > .price-name { grid-area: name; }
+.price-package > .price-desc-sub { grid-area: description; }
+.price-package > .price-info-btn { grid-area: info; margin: 0; justify-self: end; }
+.price-package > .price-val-group { grid-area: price; }
+.price-package > .price-dots { display: none; }
+
 .price-name {
   color: var(--charcoal);
   font-family: var(--font-body);
@@ -2471,15 +2483,15 @@ body.modal-open {
 
 
 /* ===== SOVA BRAND & ONLINE SHOP ===== */
-.shop-announcement { background: var(--beige); color: var(--charcoal); }
+.shop-announcement { background: #F4EDE5; color: var(--taupe); border-block: 1px solid #E4D8CC; }
 .shop-announcement-link { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding-top: 28px; padding-bottom: 28px; min-height: 110px; }
-.shop-announcement-text { font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.35rem); line-height: 1.2; }
+.shop-announcement-text { color: #4E3D30; font-weight: 600; font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.35rem); line-height: 1.2; }
 .shop-announcement-action { display: inline-flex; align-items: center; gap: 20px; flex-shrink: 0; font-size: .85rem; font-weight: 400; border-bottom: 1px solid var(--taupe); padding-block: 8px; }
 .shop-announcement-link:hover .shop-announcement-action { gap: 28px; }
 .hero { background: var(--taupe); min-height: max(760px, 100svh); }
 .hero-bg img, .hero-bg .hero-video { position: absolute; right: 0; width: 58%; height: 100%; object-fit: cover; object-position: center 45%; transform: none !important; }
-.hero-video { opacity: 0; transition: opacity .8s ease; }
-.hero-video.has-frame { opacity: 1; }
+.hero-video { opacity: 1; }
+.hero-video[hidden] { display: none; }
 .hero-overlay { background: linear-gradient(90deg, #655447 0%, #655447 36%, rgba(101,84,71,.94) 44%, rgba(101,84,71,.3) 65%, rgba(44,44,44,.12) 100%); }
 .hero-content { max-width: 590px; }
 .hero-subtitle { color: var(--ivory); opacity: .9; }
@@ -2488,9 +2500,16 @@ body.modal-open {
 .hero-video-toggle { position: absolute; right: 28px; bottom: 28px; z-index: 3; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 16px; border: 1px solid rgba(255,255,255,.5); border-radius: 100px; color: var(--white); background: rgba(44,44,44,.35); backdrop-filter: blur(12px); font: 400 .7rem var(--font-body); cursor: pointer; }
 .hero-video-toggle .video-pause-icon, .hero-video-toggle.is-playing .video-play-icon { display: none; }
 .hero-video-toggle.is-playing .video-pause-icon { display: block; }
+.hero-video-toggle.needs-gesture { color: var(--taupe); background: var(--ivory); border-color: var(--ivory); }
+.mobile-fab.is-hidden-for-prices { display: none; }
+.service-card.facial .service-card-img img { object-position: center 45%; }
+.service-card.injectables .service-card-img img { object-position: center 62%; }
+.service-card.body .service-card-img img { object-position: center 35%; }
+.service-card-overlay { background: linear-gradient(to top, rgba(44,44,44,.94) 0%, rgba(44,44,44,.62) 42%, rgba(44,44,44,.08) 100%); }
+.service-card:hover .service-card-overlay { background: linear-gradient(to top, rgba(44,44,44,.96) 0%, rgba(44,44,44,.7) 42%, rgba(44,44,44,.12) 100%); }
 .brand-logo { display: block; width: 138px; height: auto; }
 .nav-logo { flex: 0 0 auto; }
-.navbar.scrolled .brand-logo { filter: brightness(0) saturate(100%) invert(32%) sepia(18%) saturate(638%) hue-rotate(344deg) brightness(96%) contrast(87%); }
+.navbar.scrolled .nav-logo { color: var(--taupe); }
 .footer .brand-logo { width: 172px; }
 .drawer-header { display: none; }
 .nav-links { gap: clamp(14px, 2vw, 28px); }
@@ -2551,6 +2570,7 @@ body.modal-open {
 @media (max-width: 600px) {
   .shop-announcement-link { align-items: flex-start; flex-direction: column; gap: 14px; padding-block: 26px; }
   .shop-announcement-text { max-width: 320px; font-size: 1.9rem; }
+  .service-card { aspect-ratio: 4/5; }
   .hero { min-height: 100svh; align-items: flex-end; }
   .hero-bg img, .hero-bg .hero-video { width: 100%; object-position: center; }
   .hero-overlay { background: linear-gradient(180deg, rgba(44,44,44,.35) 0%, rgba(44,44,44,.12) 20%, rgba(44,44,44,.58) 48%, rgba(44,44,44,.88) 100%); }
@@ -2568,10 +2588,6 @@ body.modal-open {
   .shop-status { margin-bottom: 16px; font-size: 1rem; letter-spacing: .02em; }
   .shop-brands { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 36px 20px; margin-top: 40px; padding-top: 36px; }
   .shop-brands li:last-child { grid-column: 1 / -1; }
-  .price-item { flex-wrap: wrap; gap: 8px; align-items: center; }
-  .price-name { flex: 1 1 calc(100% - 44px); }
-  .price-val-group { margin-left: auto; }
-  .price-info-btn { width: 32px; height: 32px; flex-shrink: 0; }
   .price-card-header { text-align: left; }
   .price-slide-icon { display: none; }
 }
@@ -2579,4 +2595,60 @@ body.modal-open {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* Full-width mobile rows keep package descriptions and information buttons aligned. */
+@media (max-width: 768px) {
+  .price-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px;
+    grid-template-areas: "name info" "price price";
+    align-items: start;
+    gap: 10px 12px;
+    padding: 18px 0;
+  }
+  .price-item > .price-name, .price-item > .price-name-col {
+    grid-area: name;
+    min-width: 0;
+    width: auto;
+  }
+  .price-item .price-name {
+    font-size: .9rem;
+    line-height: 1.6;
+    white-space: normal;
+    overflow: visible;
+    overflow-wrap: break-word;
+    word-break: normal;
+    text-overflow: clip;
+  }
+  .price-name-col { gap: 8px; }
+  .price-item.price-package { grid-template-areas: "name info" "description description" "price price"; }
+  .price-desc-sub { font-size: .84rem; line-height: 1.6; color: var(--taupe); font-style: normal; }
+  .price-item > .price-info-btn {
+    grid-area: info;
+    justify-self: end;
+    align-self: start;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+  }
+  .price-info-btn svg { width: 17px; height: 17px; }
+  .price-info-btn:hover { transform: none; }
+  .price-item > .price-val-group {
+    grid-area: price;
+    min-width: 0;
+    margin: 0;
+    justify-self: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px 12px;
+    white-space: normal;
+  }
+  .price-val { font-size: 1.25rem; line-height: 1.3; }
+  .price-item > .price-dots { display: none; }
+  .highlight-item { margin: 6px 0; padding: 18px 12px; }
+  .price-item::before { inset-inline: 0; }
 }
